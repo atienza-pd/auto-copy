@@ -20,3 +20,5 @@ ForEach ($path in $paths) {
    $destinationPath = $path.destination;
    robocopy $sourcePath $destinationPath $path.includeFilesOnly /log+:$logPath /np /xo /mt /z /s /purge /xd $path.excludeDirectories /xf $path.excludeFiles
 }
+
+//TODO: Add Mirroring functionality
