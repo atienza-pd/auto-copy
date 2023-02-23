@@ -1,2 +1,5 @@
 install-logs/
 log-*.txt
+node_modules
+.vs
+dist
