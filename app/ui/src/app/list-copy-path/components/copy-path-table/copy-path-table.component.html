@@ -1,0 +1,28 @@
+<nz-table #basicTable [nzData]="listOfData">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Source</th>
+        <th>Destination</th>
+        <th>Included Files Only</th>
+        <th>Excluded Directories</th>
+        <th>Excluded Files</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.name }}</td>
+        <td>{{ data.age }}</td>
+        <td>{{ data.address }}</td>
+        <td>{{ data.address }}</td>
+        <td>{{ data.address }}</td>
+        <td>{{ data.address }}</td>
+        <td>
+          <a nz-button [nzSize]="size" nzType="link">Edit</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a  nz-button [nzSize]="size" nzType="link">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
