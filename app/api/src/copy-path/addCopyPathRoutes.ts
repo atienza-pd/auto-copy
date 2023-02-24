@@ -8,9 +8,9 @@ let store!: CopyPath[];
 fs.readFile("./src/test.json", "utf8", (err, data) => {
   if (err) {
     console.error("Failed to read file", err);
-  } else {
-    store = JSON.parse(data);
+    return;
   }
+  store = JSON.parse(data);
 });
 
 const updateFile = (data, callback) => {
@@ -33,9 +33,9 @@ router.post("/add", (req, res) => {
   updateFile(store, (err, updatedStore) => {
     if (err) {
       res.status(500).json(err);
-    } else {
-      res.status(201).json("added");
+      return;
     }
+    res.status(201).json("added");
   });
 });
 

@@ -23,36 +23,24 @@ const updateFile = (data, callback) => {
   });
 };
 
-router.put("/edit/:id", (req, res) => {
-  const id: string = req.params.id;
-  const editedData: CopyPath = req.body;
-  const reqId: string = JSON.stringify(req.body.id);
+router.delete("/remove/:id", (req, res) => {
+  const id: number = parseInt(req.params.id);
 
-  if (id !== reqId) {
-    res.status(422).json({ error: "Request and Body Id not match" });
-    return;
-  }
-
-  if (!editedData) {
-    res.status(400).json({ error: "No data provided" });
-    return;
-  }
-
-  const foundIndex = store.findIndex((x) => x.id == parseInt(id));
+  const foundIndex = store.findIndex((x) => x.id == id);
 
   if (foundIndex == -1) {
     res.status(422).json({ error: "Record not found" });
     return;
   }
 
-  const index = store.findIndex((x) => x.id === editedData.id);
-  store[index] = { ...editedData };
+  store.splice(foundIndex, 1);
+
   updateFile(store, (err, updatedStore) => {
     if (err) {
       res.status(500).json(err);
       return;
     }
-    res.json("edited");
+    res.json("deleted");
   });
 });
 

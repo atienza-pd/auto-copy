@@ -22,12 +22,12 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2023-02-24T03:47:17.059Z",
-    "modified": "2023-02-24T04:18:23.552Z",
+    "modified": "2023-02-24T13:04:21.450Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"test\",\n  \"source\": \"C:/Users/datienza.MID_OCEAN/Desktop/source\",\n  \"destination\": \"C:/Users/datienza.MID_OCEAN/Desktop/destination\",\n  \"includeFilesOnly\": [\n    \"*.txt\"\n  ],\n  \"excludeDirectories\": [],\n  \"excludeFiles\": []\n}",
+      "raw": "{\n  \"name\": \"test\",\n  \"source\": \"C:/Users/datienza.MID_OCEAN/Desktop/source\",\n  \"destination\": \"C:/Users/datienza.MID_OCEAN/Desktop/destination\",\n  \"includeFilesOnly\": [\n    \"*.txt\",\n    \"*.exe\"\n  ],\n  \"excludeDirectories\": [],\n  \"excludeFiles\": []\n}",
       "form": []
     },
     "tests": []
@@ -41,7 +41,7 @@
     "method": "PUT",
     "sortNum": 30000,
     "created": "2023-02-24T04:36:19.950Z",
-    "modified": "2023-02-24T05:00:40.250Z",
+    "modified": "2023-02-24T13:02:03.776Z",
     "headers": [],
     "params": [],
     "body": {
@@ -49,6 +49,20 @@
       "raw": "{\n  \"id\":2,\n  \"name\": \"test\",\n  \"source\": \"C:/Users/datienza.MID_OCEAN/Desktop/source\",\n  \"destination\": \"C:/Users/datienza.MID_OCEAN/Desktop/destination\",\n  \"includeFilesOnly\": [\n    \"*.txt\"\n  ],\n  \"excludeDirectories\": [],\n  \"excludeFiles\": []\n}",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "7a8f124c-293c-4942-aead-aac18669fd9c",
+    "colId": "a98211a9-24e6-4298-ae2d-f6ba1a9a455f",
+    "containerId": "",
+    "name": "Remove Copy Path",
+    "url": "{{host}}/copy-path/remove/1",
+    "method": "DELETE",
+    "sortNum": 40000,
+    "created": "2023-02-24T12:58:31.231Z",
+    "modified": "2023-02-24T13:01:37.949Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]
