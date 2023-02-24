@@ -1,0 +1,54 @@
+[
+  {
+    "_id": "57453f17-463a-4d79-ab94-eea0f3ded7a3",
+    "colId": "a98211a9-24e6-4298-ae2d-f6ba1a9a455f",
+    "containerId": "",
+    "name": "Get Copy Path List",
+    "url": "{{host}}/copy-path/list",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2023-02-24T03:46:13.063Z",
+    "modified": "2023-02-24T03:46:36.312Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "0b3c9fe2-12d3-48f9-a92a-6ab7d1782408",
+    "colId": "a98211a9-24e6-4298-ae2d-f6ba1a9a455f",
+    "containerId": "",
+    "name": "Add Copy Path",
+    "url": "{{host}}/copy-path/add",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2023-02-24T03:47:17.059Z",
+    "modified": "2023-02-24T04:18:23.552Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"test\",\n  \"source\": \"C:/Users/datienza.MID_OCEAN/Desktop/source\",\n  \"destination\": \"C:/Users/datienza.MID_OCEAN/Desktop/destination\",\n  \"includeFilesOnly\": [\n    \"*.txt\"\n  ],\n  \"excludeDirectories\": [],\n  \"excludeFiles\": []\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "233c4e3b-edf7-4084-aea0-d4ea3d3d96cc",
+    "colId": "a98211a9-24e6-4298-ae2d-f6ba1a9a455f",
+    "containerId": "",
+    "name": "Edit Copy Path",
+    "url": "{{host}}/copy-path/edit/2",
+    "method": "PUT",
+    "sortNum": 30000,
+    "created": "2023-02-24T04:36:19.950Z",
+    "modified": "2023-02-24T05:00:40.250Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\":2,\n  \"name\": \"test\",\n  \"source\": \"C:/Users/datienza.MID_OCEAN/Desktop/source\",\n  \"destination\": \"C:/Users/datienza.MID_OCEAN/Desktop/destination\",\n  \"includeFilesOnly\": [\n    \"*.txt\"\n  ],\n  \"excludeDirectories\": [],\n  \"excludeFiles\": []\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]
