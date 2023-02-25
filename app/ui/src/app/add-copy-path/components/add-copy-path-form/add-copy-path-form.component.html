@@ -1,0 +1,34 @@
+<form
+  nz-form
+  [formGroup]="validateForm"
+  class="login-form"
+  (ngSubmit)="onSubmitForm()"
+>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Please input your name!">
+      <input
+        type="text"
+        nz-input
+        formControlName="name"
+        placeholder="Name"
+      />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Please input your Source!">
+      <input nz-input formControlName="source" placeholder="Source" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Please input your Destination!">
+      <input nz-input formControlName="destination" placeholder="Destination" />
+    </nz-form-control>
+  </nz-form-item>
+  <button
+    nz-button
+    class="login-form-button login-form-margin"
+    [nzType]="'primary'"
+  >
+    Add
+  </button>
+</form>
