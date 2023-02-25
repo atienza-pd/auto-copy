@@ -22,6 +22,10 @@ import { AddCopyPathFormComponent } from './add-copy-path/components/add-copy-pa
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { AddCopyPathAddIncludedFilesOnlyComponent } from './add-copy-path/components/add-copy-path-add-included-files-only/add-copy-path-add-included-files-only.component';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { AddCopyPathAddExcludedFilesModalComponent } from './add-copy-path/components/add-copy-path-add-excluded-files-modal/add-copy-path-add-excluded-files-modal.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -31,7 +35,10 @@ registerLocaleData(en);
     CopyPathMenuControlComponent,
     CopyPathTableComponent,
     AddCopyPathContainerComponent,
-    AddCopyPathFormComponent
+    AddCopyPathFormComponent,
+    AddCopyPathAddIncludedFilesOnlyComponent,
+    AddCopyPathAddExcludedFilesModalComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -47,7 +54,9 @@ registerLocaleData(en);
     NzFormModule,
     ReactiveFormsModule,
     NzInputModule,
-    NzCheckboxModule
+    NzCheckboxModule,
+    NzListModule,
+    NzModalModule
   ],
   providers: [CopyPathListHttpService, { provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
