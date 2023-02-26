@@ -8,16 +8,16 @@ import { CopyPath } from '../../../../../../api/src/copy-path/copyPath';
   styleUrls: ['./add-copy-path-form.component.scss'],
 })
 export class AddCopyPathFormComponent implements OnInit {
-onRemoveExcludedDirectories(index: number) {
-  this.copyPath.excludeDirectories.splice(index, 1);
-}
-onHideAddExcludedDiretoryModal() {
- this.showAddExcludedDirectoryModal = false;
-}
-onOkAddExcludedDiretoryModal(name: string) {
-  this.copyPath.excludeDirectories.push(name);
-  this.showAddExcludedDirectoryModal = false;
-}
+  onRemoveExcludedDirectories(index: number) {
+    this.copyPath.excludeDirectories.splice(index, 1);
+  }
+  onHideAddExcludedDiretoryModal() {
+    this.showAddExcludedDirectoryModal = false;
+  }
+  onOkAddExcludedDiretoryModal(name: string) {
+    this.copyPath.excludeDirectories.push(name);
+    this.showAddExcludedDirectoryModal = false;
+  }
   showAddExcludedFileModal!: boolean;
   showAddExcludedDirectoryModal!: boolean;
 
@@ -54,7 +54,6 @@ onOkAddExcludedDiretoryModal(name: string) {
   }
   @Output() submitForm = new EventEmitter();
   copyPath: CopyPath = {
-    id: 0,
     name: '',
     source: '',
     destination: '',
@@ -63,7 +62,10 @@ onOkAddExcludedDiretoryModal(name: string) {
     excludeFiles: [],
   };
   onSubmitForm() {
-    this.submitForm.emit(this.validateForm.value);
+    this.copyPath.name = this.validateForm.controls['name'].value;
+    this.copyPath.source = this.validateForm.controls['source'].value;
+    this.copyPath.destination = this.validateForm.controls['destination'].value;
+    this.submitForm.emit(this.copyPath);
   }
 
   validateForm!: FormGroup;
