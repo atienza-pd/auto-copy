@@ -39,8 +39,11 @@
   <nz-form-item>
     <nz-list nzBordered>
       <nz-list-header>Excluded Directories</nz-list-header>
-      <nz-list-item *ngFor="let item of copyPath?.excludeDirectories">
+      <nz-list-item *ngFor="let item of copyPath?.excludeDirectories,  let i = index">
         {{ item }}
+        <ul nz-list-item-actions>
+          <nz-list-item-action><a (click)="onRemoveExcludedDirectories(i)">remove</a></nz-list-item-action>
+        </ul>
       </nz-list-item>
       <nz-list-footer><button nz-button (click)="addExcludeDirectories()">Add Excluded Directories</button></nz-list-footer>
     </nz-list>
@@ -67,3 +70,4 @@
 </form>
 <app-add-copy-path-add-included-files-only [isVisible] = "showAddIncludeFileModal" (ok)="onOkAddIncludeFileModal($event)" (hide) = "onHideAddIncludeFileModal()"></app-add-copy-path-add-included-files-only>
 <app-add-copy-path-add-excluded-files-modal [show] = "showAddExcludedFileModal" (ok)="onOkAddExcludedFileModal($event)" (hide) = "onHideAddExcludedFileModal()"></app-add-copy-path-add-excluded-files-modal>
+<app-add-copy-path-add-excluded-directories-modal [show]="showAddExcludedDirectoryModal" (ok)="onOkAddExcludedDiretoryModal($event)" (hide) = "onHideAddExcludedDiretoryModal()"></app-add-copy-path-add-excluded-directories-modal>

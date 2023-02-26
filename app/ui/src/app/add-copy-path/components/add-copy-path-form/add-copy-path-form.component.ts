@@ -8,7 +8,19 @@ import { CopyPath } from '../../../../../../api/src/copy-path/copyPath';
   styleUrls: ['./add-copy-path-form.component.scss'],
 })
 export class AddCopyPathFormComponent implements OnInit {
+onRemoveExcludedDirectories(index: number) {
+  this.copyPath.excludeDirectories.splice(index, 1);
+}
+onHideAddExcludedDiretoryModal() {
+ this.showAddExcludedDirectoryModal = false;
+}
+onOkAddExcludedDiretoryModal(name: string) {
+  this.copyPath.excludeDirectories.push(name);
+  this.showAddExcludedDirectoryModal = false;
+}
   showAddExcludedFileModal!: boolean;
+  showAddExcludedDirectoryModal!: boolean;
+
   onHideAddExcludedFileModal() {
     this.showAddExcludedFileModal = false;
   }
@@ -35,7 +47,7 @@ export class AddCopyPathFormComponent implements OnInit {
     this.showAddExcludedFileModal = true;
   }
   addExcludeDirectories() {
-    throw new Error('Method not implemented.');
+    this.showAddExcludedDirectoryModal = true;
   }
   addIncludeFile() {
     this.showAddIncludeFileModal = true;

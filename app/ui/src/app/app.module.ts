@@ -26,6 +26,7 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { AddCopyPathAddIncludedFilesOnlyComponent } from './add-copy-path/components/add-copy-path-add-included-files-only/add-copy-path-add-included-files-only.component';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { AddCopyPathAddExcludedFilesModalComponent } from './add-copy-path/components/add-copy-path-add-excluded-files-modal/add-copy-path-add-excluded-files-modal.component';
+import { AddCopyPathAddExcludedDirectoriesModalComponent } from './add-copy-path/components/add-copy-path-add-excluded-directories-modal/add-copy-path-add-excluded-directories-modal.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -38,6 +39,7 @@ registerLocaleData(en);
     AddCopyPathFormComponent,
     AddCopyPathAddIncludedFilesOnlyComponent,
     AddCopyPathAddExcludedFilesModalComponent,
+    AddCopyPathAddExcludedDirectoriesModalComponent,
 
   ],
   imports: [
