@@ -1,4 +1,4 @@
-import { CopyPath } from './../../../../../../api/src/copy-path/copyPath';
+import { CopyPathDto } from './../../../../../../api/src/copy-path/copyPath';
 import { Component, Input, OnInit } from '@angular/core';
 import { NzButtonSize } from 'ng-zorro-antd/button';
 interface Person {
@@ -13,7 +13,7 @@ interface Person {
   styleUrls: ['./copy-path-table.component.scss'],
 })
 export class CopyPathTableComponent implements OnInit {
-  @Input() copyPaths: CopyPath[] = [];
+  @Input() copyPaths: CopyPathDto[] = [];
 
   size: NzButtonSize = 'large';
   

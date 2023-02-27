@@ -1,9 +1,9 @@
-import { CopyPath } from "./copyPath";
+import { CopyPathDto } from "./copyPath";
 import { Router } from "express";
 import * as fs from "fs";
 const router = Router();
 
-let store!: CopyPath[];
+let store!: CopyPathDto[];
 
 fs.readFile("./src/test.json", "utf8", (err, data) => {
   if (err) {
