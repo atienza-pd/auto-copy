@@ -1,6 +1,6 @@
 import { File } from "./file";
 
-export interface CopyPath{
+export interface CopyPathDto{
     id?: number;
     name: string,
     source : string,

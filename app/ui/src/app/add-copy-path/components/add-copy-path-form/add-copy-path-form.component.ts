@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { CopyPath } from '../../../../../../api/src/copy-path/copyPath';
+import { CopyPathDto } from '../../../../../../api/src/copy-path/copyPath';
 
 @Component({
   selector: 'app-add-copy-path-form',
@@ -53,7 +53,7 @@ export class AddCopyPathFormComponent implements OnInit {
     this.showAddIncludeFileModal = true;
   }
   @Output() submitForm = new EventEmitter();
-  copyPath: CopyPath = {
+  copyPath: CopyPathDto = {
     name: '',
     source: '',
     destination: '',

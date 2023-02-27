@@ -1,9 +1,9 @@
-import { CopyPath } from "./copyPath";
+import { CopyPathDto } from "./copyPath";
 import { Router } from "express";
 import * as fs from "fs";
 const router = Router();
 
-let store!: CopyPath[];
+let store!: CopyPathDto[];
 
 fs.readFile("./src/test.json", "utf8", (err, data) => {
   if (err) {
@@ -25,7 +25,7 @@ const updateFile = (data, callback) => {
 
 router.put("/edit/:id", (req, res) => {
   const id: string = req.params.id;
-  const editedData: CopyPath = req.body;
+  const editedData: CopyPathDto = req.body;
   const reqId: string = JSON.stringify(req.body.id);
 
   if (id !== reqId) {
