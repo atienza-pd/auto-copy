@@ -29,6 +29,8 @@ import { AddCopyPathAddExcludedFilesModalComponent } from './add-copy-path/compo
 import { AddCopyPathAddExcludedDirectoriesModalComponent } from './add-copy-path/components/add-copy-path-add-excluded-directories-modal/add-copy-path-add-excluded-directories-modal.component';
 import { AddCopyPathHttpService } from './add-copy-path/add-copy-path-http/add-copy-path-http.service';
 import { DeleteCopyPathModalComponent } from './list-copy-path/components/delete-copy-path-modal/delete-copy-path-modal.component';
+import { DeleteCopyPathHttpService } from './list-copy-path/delete-copy-path-http/delete-copy-path-http.service';
+
 registerLocaleData(en);
 
 @NgModule({
@@ -43,7 +45,6 @@ registerLocaleData(en);
     AddCopyPathAddExcludedFilesModalComponent,
     AddCopyPathAddExcludedDirectoriesModalComponent,
     DeleteCopyPathModalComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -61,9 +62,14 @@ registerLocaleData(en);
     NzInputModule,
     NzCheckboxModule,
     NzListModule,
-    NzModalModule
+    NzModalModule,
   ],
-  providers: [CopyPathListHttpService,AddCopyPathHttpService, { provide: NZ_I18N, useValue: en_US }],
+  providers: [
+    CopyPathListHttpService,
+    AddCopyPathHttpService,
+    DeleteCopyPathHttpService,
+    { provide: NZ_I18N, useValue: en_US },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

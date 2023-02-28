@@ -5,19 +5,14 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './delete-copy-path-modal.component.html',
   styleUrls: ['./delete-copy-path-modal.component.scss'],
 })
-export class DeleteCopyPathModalComponent implements OnInit {
+export class DeleteCopyPathModalComponent {
   @Output() hide = new EventEmitter();
   @Output() ok = new EventEmitter();
   @Input() show!: boolean;
-  @Input() id!: number;
   handleOk() {
     this.ok.emit();
   }
   handleCancel() {
-     this.hide.emit();
+    this.hide.emit();
   }
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }
