@@ -1,6 +1,6 @@
 import { CopyPath } from "./../entity/copyPath";
 import { AppDataSource } from "./../data-source";
-import { CopyPathDto } from "./copyPath";
+import { CopyPathDto } from "./copyPathDto";
 import { Router } from "express";
 const router = Router();
 

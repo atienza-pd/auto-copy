@@ -1,3 +1,4 @@
+import { CopyPathDto } from "./copyPathDto";
 
 import { Router } from "express";
 import * as fs from "fs";
@@ -14,7 +15,17 @@ router.get("/list", async (req, res) => {
     return;
   }
 
-  res.json(data);
+  const copyPathsDto : CopyPathDto[] = data.flatMap((x: CopyPath) => ({
+    id: x.id,
+    name: x.name,
+    source: x.source,
+    destination: x.destination,
+    includeFilesOnly: JSON.parse(x.includeFiles),
+    excludeDirectories: [],
+    excludeFiles: []
+  }));
+
+  res.json(copyPathsDto);
 });
 
 export default router;

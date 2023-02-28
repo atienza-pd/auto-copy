@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { CopyPathDto } from '../../../../../../api/src/copy-path/copyPath';
+import { CopyPathDto } from '../../../../../../api/src/copy-path/copyPathDto';
 
 @Component({
   selector: 'app-add-copy-path-form',

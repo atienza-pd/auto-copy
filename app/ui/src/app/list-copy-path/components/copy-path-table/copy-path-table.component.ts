@@ -1,4 +1,4 @@
-import { CopyPathDto } from './../../../../../../api/src/copy-path/copyPath';
+import { CopyPathDto } from '../../../../../../api/src/copy-path/copyPathDto';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NzButtonSize } from 'ng-zorro-antd/button';
 interface Person {
