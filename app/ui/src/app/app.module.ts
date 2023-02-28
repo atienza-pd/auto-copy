@@ -32,7 +32,7 @@ import { DeleteCopyPathModalComponent } from './list-copy-path/components/delete
 import { DeleteCopyPathHttpService } from './list-copy-path/delete-copy-path-http/delete-copy-path-http.service';
 import { EditCopyPathContainerComponent } from './edit-copy-path/edit-copy-path-container/edit-copy-path-container.component';
 import { EditCopyPathFormComponent } from './edit-copy-path/components/edit-copy-path-form/edit-copy-path-form.component';
-
+import { GetOneCopyPathHttpService } from './edit-copy-path/get-one-copy-path-http/get-one-copy-path-http.service';
 registerLocaleData(en);
 
 @NgModule({
@@ -72,6 +72,7 @@ registerLocaleData(en);
     CopyPathListHttpService,
     AddCopyPathHttpService,
     DeleteCopyPathHttpService,
+    GetOneCopyPathHttpService,
     { provide: NZ_I18N, useValue: en_US },
   ],
   bootstrap: [AppComponent],
