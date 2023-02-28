@@ -1,2 +1,11 @@
 <app-copy-path-menu-control></app-copy-path-menu-control>
-<app-copy-path-table  [copyPaths] = "copyPaths"></app-copy-path-table>
+<app-copy-path-table
+  [copyPaths]="copyPaths"
+  (showRemoveCopyPathModal)="onShowRemoveCopyPathModal($event)"
+></app-copy-path-table>
+<app-delete-copy-path-modal
+[id] ="id"
+  [show]="showRemoveCopyPathModal"
+  (ok)="onOkRemoveCopyPathModal()"
+  (hide)="onHideRemoveCopyPathModal()"
+></app-delete-copy-path-modal>

@@ -1,28 +1,34 @@
 <nz-table #basicTable [nzData]="copyPaths">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Source</th>
-        <th>Destination</th>
-        <th>Included Files Only</th>
-        <th>Excluded Directories</th>
-        <th>Excluded Files</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let data of basicTable.data">
-        <td>{{ data.name }}</td>
-        <td>{{ data.source }}</td>
-        <td>{{ data.destination }}</td>
-        <td>{{ data.includeFilesOnly }}</td>
-        <td>{{ data.excludeDirectories }}</td>
-        <td>{{ data.excludeFiles }}</td>
-        <td>
-          <a nz-button [nzSize]="size" nzType="link">Edit</a>
-          <nz-divider nzType="vertical"></nz-divider>
-          <a  nz-button [nzSize]="size" nzType="link">Delete</a>
-        </td>
-      </tr>
-    </tbody>
-  </nz-table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Source</th>
+      <th>Destination</th>
+      <th>Included Files Only</th>
+      <th>Excluded Directories</th>
+      <th>Excluded Files</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.name }}</td>
+      <td>{{ data.source }}</td>
+      <td>{{ data.destination }}</td>
+      <td>{{ data.includeFilesOnly }}</td>
+      <td>{{ data.excludeDirectories }}</td>
+      <td>{{ data.excludeFiles }}</td>
+      <td>
+        <a nz-button [nzSize]="size" nzType="link">Edit</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a
+          nz-button
+          [nzSize]="size"
+          nzType="link"
+          (click)="onShowRemoveCopyPathModal(data.id)"
+          >Delete</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

@@ -1,5 +1,5 @@
 import { CopyPathDto } from './../../../../../../api/src/copy-path/copyPath';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NzButtonSize } from 'ng-zorro-antd/button';
 interface Person {
   key: string;
@@ -14,9 +14,11 @@ interface Person {
 })
 export class CopyPathTableComponent implements OnInit {
   @Input() copyPaths: CopyPathDto[] = [];
-
+  @Output() showRemoveCopyPathModal = new EventEmitter();
   size: NzButtonSize = 'large';
-  
+  onShowRemoveCopyPathModal(id: number | undefined){
+    this.showRemoveCopyPathModal.emit(id);
+  }
   constructor() {}
 
   ngOnInit(): void {}

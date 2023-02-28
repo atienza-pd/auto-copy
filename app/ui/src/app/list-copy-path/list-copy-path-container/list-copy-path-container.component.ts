@@ -9,12 +9,28 @@ import { CopyPathDto } from '../../../../../api/src/copy-path/copyPath';
 })
 export class ListCopyPathContainerComponent implements OnInit {
   copyPaths! : CopyPathDto[];
+  showRemoveCopyPathModal = false;
+  id!: number;
   constructor(private httpService : CopyPathListHttpService) { }
 
   ngOnInit(): void {
     this.httpService.execute().subscribe(copyPaths => {
       this.copyPaths = copyPaths;
     });
+  }
+
+  onOkRemoveCopyPathModal(){
+    this.showRemoveCopyPathModal = false;
+    console.log("test")
+  }
+
+  onHideRemoveCopyPathModal(){
+    this.showRemoveCopyPathModal = false;
+  }
+
+  onShowRemoveCopyPathModal(id : number){
+    this.showRemoveCopyPathModal = true;
+    this.id = id;
   }
 
 }
