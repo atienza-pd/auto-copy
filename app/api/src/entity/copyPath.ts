@@ -10,4 +10,6 @@ export class CopyPath{
     source : string;
     @Column()
     destination: string;
+    @Column()
+    includeFiles: string;
 }

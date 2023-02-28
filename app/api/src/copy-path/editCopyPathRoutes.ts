@@ -1,5 +1,5 @@
 import { CopyPath } from "./../entity/copyPath";
-import { CopyPathDto } from "./copyPath";
+import { CopyPathDto } from "./copyPathDto";
 import { Router } from "express";
 import { AppDataSource } from "../data-source";
 const router = Router();

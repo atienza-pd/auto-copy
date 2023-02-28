@@ -1,6 +1,6 @@
 import { CopyPathListHttpService } from './../copy-path-list-http/copy-path-list-http.service';
 import { Component, OnInit } from '@angular/core';
-import { CopyPathDto } from '../../../../../api/src/copy-path/copyPath';
+import { CopyPathDto } from '../../../../../api/src/copy-path/copyPathDto';
 import { DeleteCopyPathHttpService } from '../delete-copy-path-http/delete-copy-path-http.service';
 
 @Component({
