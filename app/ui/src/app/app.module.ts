@@ -30,6 +30,8 @@ import { AddCopyPathAddExcludedDirectoriesModalComponent } from './add-copy-path
 import { AddCopyPathHttpService } from './add-copy-path/add-copy-path-http/add-copy-path-http.service';
 import { DeleteCopyPathModalComponent } from './list-copy-path/components/delete-copy-path-modal/delete-copy-path-modal.component';
 import { DeleteCopyPathHttpService } from './list-copy-path/delete-copy-path-http/delete-copy-path-http.service';
+import { EditCopyPathContainerComponent } from './edit-copy-path/edit-copy-path-container/edit-copy-path-container.component';
+import { EditCopyPathFormComponent } from './edit-copy-path/components/edit-copy-path-form/edit-copy-path-form.component';
 
 registerLocaleData(en);
 
@@ -45,6 +47,8 @@ registerLocaleData(en);
     AddCopyPathAddExcludedFilesModalComponent,
     AddCopyPathAddExcludedDirectoriesModalComponent,
     DeleteCopyPathModalComponent,
+    EditCopyPathContainerComponent,
+    EditCopyPathFormComponent,
   ],
   imports: [
     BrowserModule,
