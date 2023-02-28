@@ -1,29 +1,12 @@
+import { CopyPath } from "./../entity/copyPath";
 import { CopyPathDto } from "./copyPath";
 import { Router } from "express";
-import * as fs from "fs";
+import { AppDataSource } from "../data-source";
 const router = Router();
 
-let store!: CopyPathDto[];
+const repo = AppDataSource.getRepository(CopyPath);
 
-fs.readFile("./src/test.json", "utf8", (err, data) => {
-  if (err) {
-    console.error("Failed to read file", err);
-  } else {
-    store = JSON.parse(data);
-  }
-});
-
-const updateFile = (data, callback) => {
-  fs.writeFile("./src/test.json", JSON.stringify(data), (err) => {
-    if (err) {
-      callback({ error: "Failed to update file" }, null);
-    } else {
-      callback(null, data);
-    }
-  });
-};
-
-router.put("/edit/:id", (req, res) => {
+router.put("/edit/:id", async (req, res) => {
   const id: string = req.params.id;
   const editedData: CopyPathDto = req.body;
   const reqId: string = JSON.stringify(req.body.id);
@@ -38,22 +21,19 @@ router.put("/edit/:id", (req, res) => {
     return;
   }
 
-  const foundIndex = store.findIndex((x) => x.id == parseInt(id));
+  const copyPath = await repo.findOneBy({ id: parseInt(id) });
 
-  if (foundIndex == -1) {
+  if (!copyPath) {
     res.status(422).json({ error: "Record not found" });
     return;
   }
 
-  const index = store.findIndex((x) => x.id === editedData.id);
-  store[index] = { ...editedData };
-  updateFile(store, (err, updatedStore) => {
-    if (err) {
-      res.status(500).json(err);
-      return;
-    }
-    res.json("edited");
-  });
+  copyPath.name = editedData.name;
+  copyPath.source = editedData.source;
+  copyPath.destination = editedData.destination;
+  await repo.save(copyPath);
+  
+  res.status(200).json("edited");
 });
 
 export default router;
