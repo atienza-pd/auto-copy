@@ -12,4 +12,8 @@ export class CopyPath{
     destination: string;
     @Column()
     includeFiles: string;
+    @Column()
+    excludedDirectories: string;
+    @Column()
+    excludedFiles: string;
 }

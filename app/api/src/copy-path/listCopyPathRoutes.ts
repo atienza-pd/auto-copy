@@ -21,8 +21,8 @@ router.get("/list", async (req, res) => {
     source: x.source,
     destination: x.destination,
     includeFilesOnly: JSON.parse(x.includeFiles),
-    excludeDirectories: [],
-    excludeFiles: []
+    excludeDirectories: JSON.parse(x.excludedDirectories),
+    excludeFiles: JSON.parse(x.excludedFiles)
   }));
 
   res.json(copyPathsDto);
