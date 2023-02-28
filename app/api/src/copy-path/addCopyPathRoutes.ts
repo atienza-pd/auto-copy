@@ -18,6 +18,8 @@ router.post("/add", async (req, res) => {
   copyPath.source = copyPathDto.source;
   copyPath.destination = copyPathDto.destination;
   copyPath.includeFiles = JSON.stringify(copyPathDto.includeFilesOnly);
+  copyPath.excludedDirectories = JSON.stringify(copyPathDto.excludeDirectories);
+  copyPath.excludedFiles = JSON.stringify(copyPathDto.excludeFiles);
   await repo.save(copyPath);
   res.status(201).json("added");
 });
