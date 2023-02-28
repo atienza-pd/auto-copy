@@ -31,6 +31,7 @@ router.put("/edit/:id", async (req, res) => {
   copyPath.name = editedData.name;
   copyPath.source = editedData.source;
   copyPath.destination = editedData.destination;
+  copyPath.includeFiles = JSON.stringify(editedData.includeFilesOnly);
   copyPath.excludedDirectories = JSON.stringify(editedData.excludeDirectories);
   copyPath.excludedFiles = JSON.stringify(editedData.excludeFiles);
   await repo.save(copyPath);
