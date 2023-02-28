@@ -8,31 +8,33 @@ import addCopyPathRoutes from "./copy-path/addCopyPathRoutes";
 import editCopyPathRoutes from "./copy-path/editCopyPathRoutes";
 import removeCopyPathRoutes from "./copy-path/removeCopyPathRoutes";
 import getOneCopyPathRoute from './copy-path/getOneCopyPathRoute';
+import buildCopyPathJsonRoute from './copy-path/buildCopyPathJsonRoute';
 
 const corsOptions = {
-  origin: "*",
-  optionsSuccessStatus: 200,
-  exposedHeaders: ["Content-Length"],
-  allowedHeaders: ["Accept", "Content-Type", "Origin", "X-Requested-With"],
+    origin: "*",
+    optionsSuccessStatus: 200,
+    exposedHeaders: ["Content-Length"],
+    allowedHeaders: ["Accept", "Content-Type", "Origin", "X-Requested-With"],
 };
 AppDataSource.initialize()
-  .then(async () => {
-    console.log(
-      "Database has been started!"
-    );
-  })
-  .catch((error) => console.log(error));
+    .then(async () => {
+        console.log(
+            "Database has been started!"
+        );
+    })
+    .catch((error) => console.log(error));
 const app = express();
 const port = 3000;
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use("/copy-path", [
-  listCopyEntryRoutes,
-  addCopyPathRoutes,
-  editCopyPathRoutes,
-  removeCopyPathRoutes,
-  getOneCopyPathRoute
+    listCopyEntryRoutes,
+    addCopyPathRoutes,
+    editCopyPathRoutes,
+    removeCopyPathRoutes,
+    getOneCopyPathRoute,
+    buildCopyPathJsonRoute
 ]);
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+    console.log(`Server listening on port ${port}`);
 });
