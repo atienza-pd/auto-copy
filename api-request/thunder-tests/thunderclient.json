@@ -37,16 +37,16 @@
     "colId": "a98211a9-24e6-4298-ae2d-f6ba1a9a455f",
     "containerId": "",
     "name": "Edit Copy Path",
-    "url": "{{host}}/copy-path/edit/2",
+    "url": "{{host}}/copy-path/edit/14",
     "method": "PUT",
     "sortNum": 30000,
     "created": "2023-02-24T04:36:19.950Z",
-    "modified": "2023-02-24T13:02:03.776Z",
+    "modified": "2023-02-28T01:40:43.038Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"id\":2,\n  \"name\": \"test\",\n  \"source\": \"C:/Users/datienza.MID_OCEAN/Desktop/source\",\n  \"destination\": \"C:/Users/datienza.MID_OCEAN/Desktop/destination\",\n  \"includeFilesOnly\": [\n    \"*.txt\"\n  ],\n  \"excludeDirectories\": [],\n  \"excludeFiles\": []\n}",
+      "raw": "{\n  \"id\":14,\n  \"name\": \"2\",\n  \"source\": \"C:/Users/datienza.MID_OCEAN/Desktop/source\",\n  \"destination\": \"C:/Users/datienza.MID_OCEAN/Desktop/destination\",\n  \"includeFilesOnly\": [\n    \"*.txt\"\n  ],\n  \"excludeDirectories\": [],\n  \"excludeFiles\": []\n}",
       "form": []
     },
     "tests": []

@@ -16,19 +16,8 @@ const corsOptions = {
 };
 AppDataSource.initialize()
   .then(async () => {
-    const copyPath = new CopyPath();
-    copyPath.name = "Timber";
-    copyPath.source = "Saw";
-    copyPath.destination = "test";
-    await AppDataSource.manager.save(copyPath);
-    console.log("Saved a new user with id: " + copyPath.id);
-
-    console.log("Loading copypaths from the database...");
-    const users = await AppDataSource.manager.find(CopyPath);
-    console.log("Loaded copyPaths: ", users);
-
     console.log(
-      "Here you can setup and run express / fastify / any other framework."
+      "Database has been started!"
     );
   })
   .catch((error) => console.log(error));
