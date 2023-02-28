@@ -78,5 +78,19 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "48176902-a57b-486b-9e78-9919ee18c585",
+    "colId": "a98211a9-24e6-4298-ae2d-f6ba1a9a455f",
+    "containerId": "",
+    "name": "Build Copy Path Json",
+    "url": "{{host}}/copy-path/build",
+    "method": "POST",
+    "sortNum": 25000,
+    "created": "2023-02-28T09:26:27.541Z",
+    "modified": "2023-02-28T09:26:48.228Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]
