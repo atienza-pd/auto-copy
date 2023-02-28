@@ -32,7 +32,7 @@ router.put("/edit/:id", async (req, res) => {
   copyPath.source = editedData.source;
   copyPath.destination = editedData.destination;
   await repo.save(copyPath);
-  
+
   res.status(200).json("edited");
 });
 
