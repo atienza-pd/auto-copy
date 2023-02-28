@@ -19,7 +19,13 @@
       <td>{{ data.excludeDirectories }}</td>
       <td>{{ data.excludeFiles }}</td>
       <td>
-        <a nz-button [nzSize]="size" nzType="link">Edit</a>
+        <a
+          nz-button
+          [nzSize]="size"
+          nzType="link"
+          [routerLink]="'./edit/' + data.id"
+          >Edit</a
+        >
         <nz-divider nzType="vertical"></nz-divider>
         <a
           nz-button
