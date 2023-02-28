@@ -36,19 +36,14 @@
     "_id": "233c4e3b-edf7-4084-aea0-d4ea3d3d96cc",
     "colId": "a98211a9-24e6-4298-ae2d-f6ba1a9a455f",
     "containerId": "",
-    "name": "Edit Copy Path",
-    "url": "{{host}}/copy-path/edit/3",
-    "method": "PUT",
+    "name": "Get One Copy Path",
+    "url": "{{host}}/copy-path/get/3",
+    "method": "GET",
     "sortNum": 30000,
     "created": "2023-02-24T04:36:19.950Z",
-    "modified": "2023-02-28T06:32:12.666Z",
+    "modified": "2023-02-28T07:38:12.024Z",
     "headers": [],
     "params": [],
-    "body": {
-      "type": "json",
-      "raw": "{\n  \"id\":3,\n  \"name\": \"asdfsadf\",\n  \"source\": \"C:/Users/datienza.MID_OCEAN/Desktop/source\",\n  \"destination\": \"C:/Users/datienza.MID_OCEAN/Desktop/destination\",\n  \"includeFilesOnly\": [\n    \"*.txt\"\n  ],\n  \"excludeDirectories\": [\"*.txt\"],\n  \"excludeFiles\": [\"*.txt\"]\n}",
-      "form": []
-    },
     "tests": []
   },
   {
@@ -63,6 +58,25 @@
     "modified": "2023-02-24T13:01:37.949Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "6999d482-3572-43cd-9c09-fae3db0a7724",
+    "colId": "a98211a9-24e6-4298-ae2d-f6ba1a9a455f",
+    "containerId": "",
+    "name": "Get Copy Path",
+    "url": "{{host}}/copy-path/edit/3",
+    "method": "PUT",
+    "sortNum": 35000,
+    "created": "2023-02-28T07:34:13.560Z",
+    "modified": "2023-02-28T07:34:13.560Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\":3,\n  \"name\": \"asdfsadf\",\n  \"source\": \"C:/Users/datienza.MID_OCEAN/Desktop/source\",\n  \"destination\": \"C:/Users/datienza.MID_OCEAN/Desktop/destination\",\n  \"includeFilesOnly\": [\n    \"*.txt\"\n  ],\n  \"excludeDirectories\": [\"*.txt\"],\n  \"excludeFiles\": [\"*.txt\"]\n}",
+      "form": []
+    },
     "tests": []
   }
 ]
