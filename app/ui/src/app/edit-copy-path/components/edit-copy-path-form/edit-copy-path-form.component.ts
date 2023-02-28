@@ -9,6 +9,8 @@ import { CopyPathDto } from '../../../../../../api/src/copy-path/copyPathDto';
 })
 export class EditCopyPathFormComponent implements OnInit {
 
+  @Input() copyPath!: CopyPathDto;
+
   onRemoveExcludedDirectories(index: number) {
     this.copyPath.excludeDirectories.splice(index, 1);
   }
@@ -53,15 +55,9 @@ export class EditCopyPathFormComponent implements OnInit {
   addIncludeFile() {
     this.showAddIncludeFileModal = true;
   }
+
   @Output() submitForm = new EventEmitter();
-  copyPath: CopyPathDto = {
-    name: '',
-    source: '',
-    destination: '',
-    includeFilesOnly: [],
-    excludeDirectories: [],
-    excludeFiles: [],
-  };
+
   onSubmitForm() {
     this.copyPath.name = this.validateForm.controls['name'].value;
     this.copyPath.source = this.validateForm.controls['source'].value;
@@ -70,13 +66,13 @@ export class EditCopyPathFormComponent implements OnInit {
   }
 
   validateForm!: FormGroup;
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
-      name: [null, [Validators.required]],
-      source: [null, [Validators.required]],
-      destination: [null, [Validators.required]],
+      name: [this.copyPath.name, [Validators.required]],
+      source: [this.copyPath.source, [Validators.required]],
+      destination: [this.copyPath.destination, [Validators.required]],
     });
   }
 
