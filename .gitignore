@@ -3,4 +3,4 @@ log-*.txt
 node_modules
 .vs
 dist
-app/api/*.db
+*.db
