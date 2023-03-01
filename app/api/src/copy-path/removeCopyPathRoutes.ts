@@ -7,18 +7,23 @@ const router = Router();
 const repo = AppDataSource.getRepository(CopyPath);
 
 router.delete("/remove/:id", async (req, res) => {
-  const id: number = parseInt(req.params.id);
+    try {
+        const id: number = parseInt(req.params.id);
 
-  const copyPath = await repo.findOneBy({ id: id });
+        const copyPath = await repo.findOneBy({ id: id });
 
-  if (!copyPath) {
-    res.status(422).json({ error: "Record not found" });
-    return;
-  }
+        if (!copyPath) {
+            res.status(422).json({ error: "Record not found" });
+            return;
+        }
 
-  await repo.remove(copyPath);
+        await repo.remove(copyPath);
 
-  res.json("deleted");
+        res.json("deleted");
+    } catch (error) {
+        res.status(400).json();
+    }
+
 });
 
 export default router;

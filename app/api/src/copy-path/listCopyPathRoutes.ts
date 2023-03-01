@@ -9,23 +9,28 @@ const router = Router();
 let store!: CopyPath[];
 
 router.get("/list", async (req, res) => {
-  const data = await AppDataSource.manager.find(CopyPath);
-  if (!data) {
-    res.status(500).json({ error: "Failed to read file" });
-    return;
-  }
+    try {
+        const data = await AppDataSource.manager.find(CopyPath);
+        if (!data) {
+            res.status(500).json({ error: "Failed to read file" });
+            return;
+        }
 
-  const copyPathsDto : CopyPathDto[] = data.flatMap((x: CopyPath) => ({
-    id: x.id,
-    name: x.name,
-    source: x.source,
-    destination: x.destination,
-    includeFilesOnly: JSON.parse(x.includeFiles),
-    excludeDirectories: JSON.parse(x.excludedDirectories),
-    excludeFiles: JSON.parse(x.excludedFiles)
-  }));
+        const copyPathsDto: CopyPathDto[] = data.flatMap((x: CopyPath) => ({
+            id: x.id,
+            name: x.name,
+            source: x.source,
+            destination: x.destination,
+            includeFilesOnly: JSON.parse(x.includeFiles),
+            excludeDirectories: JSON.parse(x.excludedDirectories),
+            excludeFiles: JSON.parse(x.excludedFiles)
+        }));
 
-  res.json(copyPathsDto);
+        res.json(copyPathsDto);
+    } catch (error) {
+        res.status(400).json();
+    }
+
 });
 
 export default router;

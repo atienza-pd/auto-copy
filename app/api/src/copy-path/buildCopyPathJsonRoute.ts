@@ -16,31 +16,38 @@ const updateFile = (data, callback) => {
 };
 
 router.post("/build", async (req, res) => {
-    const data = await AppDataSource.manager.find(CopyPath);
-    if (!data) {
-        res.status(500).json({ error: "Failed to read database data" });
-        return;
-    }
 
-    const copyPathsDto: CopyPathDto[] = data.flatMap((x: CopyPath) => ({
-        id: x.id,
-        name: x.name,
-        source: x.source,
-        destination: x.destination,
-        includeFilesOnly: JSON.parse(x.includeFiles),
-        excludeDirectories: JSON.parse(x.excludedDirectories),
-        excludeFiles: JSON.parse(x.excludedFiles)
-    }));
+    try {
+        const data = await AppDataSource.manager.find(CopyPath);
 
-    updateFile(copyPathsDto, (err, updatedStore) => {
-        if (err) {
-            res.status(500).json(err);
+        if (!data) {
+            res.status(500).json({ error: "Failed to read database data" });
             return;
         }
-        res.json("json created");
-    });
 
-    
+        const copyPathsDto: CopyPathDto[] = data.flatMap((x: CopyPath) => ({
+            id: x.id,
+            name: x.name,
+            source: x.source,
+            destination: x.destination,
+            includeFilesOnly: JSON.parse(x.includeFiles),
+            excludeDirectories: JSON.parse(x.excludedDirectories),
+            excludeFiles: JSON.parse(x.excludedFiles)
+        }));
+
+        updateFile(copyPathsDto, (err, updatedStore) => {
+            if (err) {
+                res.status(500).json(err);
+                return;
+            }
+            res.json("json created");
+        });
+    } catch (error) {
+        res.status(400).json();
+    }
+
+
+
 });
 
 export default router;
