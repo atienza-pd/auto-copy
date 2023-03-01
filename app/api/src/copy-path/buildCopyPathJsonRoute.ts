@@ -3,10 +3,14 @@ import { Router } from "express";
 import { AppDataSource } from "../data-source";
 import { CopyPath } from "../entity/copyPath";
 import * as fs from "fs";
+import { BuildJsonLocation } from "../entity/buildJsonLocation";
+import { Not } from "typeorm";
 const router = Router();
+const repo = AppDataSource.getRepository(BuildJsonLocation);
 
-const updateFile = (data, callback) => {
-    fs.writeFile("./src/test.json", JSON.stringify(data), (err) => {
+const updateFile = async(data, callback) => {
+    const location = await repo.findOne({ where: { location: Not("") } });
+    fs.writeFile(location.location, JSON.stringify(data), (err) => {
         if (err) {
             callback({ error: "Failed to update file" }, null);
         } else {
@@ -35,7 +39,7 @@ router.post("/build", async (req, res) => {
             excludeFiles: JSON.parse(x.excludedFiles)
         }));
 
-        updateFile(copyPathsDto, (err, updatedStore) => {
+        await updateFile(copyPathsDto, (err, updatedStore) => {
             if (err) {
                 res.status(500).json(err);
                 return;
