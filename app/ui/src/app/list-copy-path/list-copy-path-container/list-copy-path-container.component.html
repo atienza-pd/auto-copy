@@ -1,4 +1,4 @@
-<app-copy-path-menu-control></app-copy-path-menu-control>
+<app-copy-path-menu-control (showEditBuildJsonLocationModal) ="onShowEditBuildJsonLocationModal()"></app-copy-path-menu-control>
 <app-copy-path-table
   [copyPaths]="copyPaths"
   (showRemoveCopyPathModal)="onShowRemoveCopyPathModal($event)"
@@ -8,3 +8,4 @@
   (ok)="onOkRemoveCopyPathModal()"
   (hide)="onHideRemoveCopyPathModal()"
 ></app-delete-copy-path-modal>
+<app-edit-build-json-location-modal [show] ="showEditBuildJsonModal" (ok) ="onOkEditBuildJsonModal($event)" (hide) ="onHideEditBuildJsonModal()"></app-edit-build-json-location-modal>

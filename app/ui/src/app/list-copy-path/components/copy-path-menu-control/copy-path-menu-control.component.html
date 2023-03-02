@@ -1,8 +1,18 @@
-<nz-page-header
-  ><nz-page-header-title>Copy Paths</nz-page-header-title>
+<nz-page-header>
+  <nz-page-header-title>Copy Paths</nz-page-header-title>
   <nz-page-header-subtitle>This is the list of Copy Path</nz-page-header-subtitle>
   <nz-page-header-extra>
     <button nz-button nzType="primary" routerLink="/add">Add</button>
-    <button nz-button  (click)="onBuildJson()">Build Json</button>
-  </nz-page-header-extra></nz-page-header
->
+    <nz-button-group>
+      <button nz-button (click)="onBuildJson()">Build Json</button>
+      <button nz-button nz-dropdown [nzDropdownMenu]="menu1" nzPlacement="bottomRight">
+        <i nz-icon nzType="ellipsis"></i>
+      </button>
+    </nz-button-group>
+  </nz-page-header-extra>
+</nz-page-header>
+<nz-dropdown-menu #menu1="nzDropdownMenu">
+  <ul nz-menu>
+    <li nz-menu-item (click)="onShowEditBuildJsonLocationModal()">Edit Build Json Location</li>
+  </ul>
+</nz-dropdown-menu>
