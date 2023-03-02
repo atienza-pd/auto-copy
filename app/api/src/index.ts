@@ -9,6 +9,7 @@ import editCopyPathRoutes from "./copy-path/editCopyPathRoutes";
 import removeCopyPathRoutes from "./copy-path/removeCopyPathRoutes";
 import getOneCopyPathRoute from './copy-path/getOneCopyPathRoute';
 import buildCopyPathJsonRoute from './copy-path/buildCopyPathJsonRoute';
+import editBuildJsonLocationRoutes from './copy-path/editBuildJsonLocationRoutes';
 
 const corsOptions = {
     origin: "*",
@@ -33,7 +34,8 @@ app.use("/copy-path", [
     editCopyPathRoutes,
     removeCopyPathRoutes,
     getOneCopyPathRoute,
-    buildCopyPathJsonRoute
+    buildCopyPathJsonRoute,
+    editBuildJsonLocationRoutes
 ]);
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
