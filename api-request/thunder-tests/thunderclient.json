@@ -92,5 +92,24 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "d424fec6-0e24-47f5-9692-683e4d99f258",
+    "colId": "a98211a9-24e6-4298-ae2d-f6ba1a9a455f",
+    "containerId": "",
+    "name": "Edit Build Json Location",
+    "url": "{{host}}/copy-path/build-json-location/edit/1",
+    "method": "PUT",
+    "sortNum": 37500,
+    "created": "2023-03-02T02:08:21.859Z",
+    "modified": "2023-03-02T02:10:15.795Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\":1,\n  \"location\": \"asdfsadf\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
