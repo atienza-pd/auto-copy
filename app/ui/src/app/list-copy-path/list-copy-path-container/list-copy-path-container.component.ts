@@ -11,11 +11,12 @@ import { DeleteCopyPathHttpService } from '../delete-copy-path-http/delete-copy-
 export class ListCopyPathContainerComponent implements OnInit {
   copyPaths!: CopyPathDto[];
   showRemoveCopyPathModal = false;
+  showEditBuildJsonModal = false;
   id!: number;
   constructor(
     private httpService: CopyPathListHttpService,
     private httpDeleteService: DeleteCopyPathHttpService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.loadData();
@@ -41,5 +42,17 @@ export class ListCopyPathContainerComponent implements OnInit {
     this.httpService.execute().subscribe((copyPaths) => {
       this.copyPaths = copyPaths;
     });
+  }
+
+  onShowEditBuildJsonLocationModal() {
+    this.showEditBuildJsonModal = true;
+  }
+
+  onOkEditBuildJsonModal(value: string) {
+    this.showEditBuildJsonModal = false
+  }
+
+  onHideEditBuildJsonModal() {
+    this.showEditBuildJsonModal = false;
   }
 }

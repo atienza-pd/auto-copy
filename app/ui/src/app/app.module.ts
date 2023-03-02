@@ -35,6 +35,9 @@ import { EditCopyPathFormComponent } from './edit-copy-path/components/edit-copy
 import { GetOneCopyPathHttpService } from './edit-copy-path/get-one-copy-path-http/get-one-copy-path-http.service';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { BuildCopyPathJsonHttpService } from './list-copy-path/build-copy-path-json-http/build-copy-path-json-http.service';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { EditBuildJsonLocationModalComponent } from './list-copy-path/components/edit-build-json-location-modal/edit-build-json-location-modal.component';
 registerLocaleData(en);
 
 @NgModule({
@@ -51,6 +54,7 @@ registerLocaleData(en);
     DeleteCopyPathModalComponent,
     EditCopyPathContainerComponent,
     EditCopyPathFormComponent,
+    EditBuildJsonLocationModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,9 @@ registerLocaleData(en);
     NzCheckboxModule,
     NzListModule,
     NzModalModule,
-    NzMessageModule
+    NzMessageModule,
+    NzDropDownModule,
+    NzIconModule
   ],
   providers: [
     CopyPathListHttpService,

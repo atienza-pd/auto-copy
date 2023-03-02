@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { BuildCopyPathJsonHttpService } from '../../build-copy-path-json-http/build-copy-path-json-http.service';
 
@@ -8,6 +8,7 @@ import { BuildCopyPathJsonHttpService } from '../../build-copy-path-json-http/bu
   styleUrls: ['./copy-path-menu-control.component.scss'],
 })
 export class CopyPathMenuControlComponent {
+  @Output() showEditBuildJsonLocationModal = new EventEmitter();
   constructor(private buildJsonHttp: BuildCopyPathJsonHttpService, private message: NzMessageService) {
 
   }
@@ -15,6 +16,10 @@ export class CopyPathMenuControlComponent {
     this.buildJsonHttp.execute().subscribe(() => {
       this.message.info('Building Json Succeed')
     });
+  }
+
+  onShowEditBuildJsonLocationModal() {
+    this.showEditBuildJsonLocationModal.emit();
   }
 
   onBack() { }
