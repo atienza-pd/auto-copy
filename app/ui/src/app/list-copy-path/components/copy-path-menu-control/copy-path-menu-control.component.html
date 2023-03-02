@@ -4,7 +4,7 @@
   <nz-page-header-extra>
     <button nz-button nzType="primary" routerLink="/add">Add</button>
     <nz-button-group>
-      <button nz-button (click)="onBuildJson()">Build Json</button>
+      <button nz-button nz-tooltip [nzTooltipTitle]="location$ | async " (click)="onBuildJson()">Build Json</button>
       <button nz-button nz-dropdown [nzDropdownMenu]="menu1" nzPlacement="bottomRight">
         <i nz-icon nzType="ellipsis"></i>
       </button>

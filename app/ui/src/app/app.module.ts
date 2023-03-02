@@ -37,6 +37,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import { BuildCopyPathJsonHttpService } from './list-copy-path/build-copy-path-json-http/build-copy-path-json-http.service';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { EditBuildJsonLocationModalComponent } from './list-copy-path/components/edit-build-json-location-modal/edit-build-json-location-modal.component';
 registerLocaleData(en);
 
@@ -75,7 +76,8 @@ registerLocaleData(en);
     NzModalModule,
     NzMessageModule,
     NzDropDownModule,
-    NzIconModule
+    NzIconModule,
+    NzToolTipModule
   ],
   providers: [
     CopyPathListHttpService,
