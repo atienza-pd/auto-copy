@@ -111,5 +111,19 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "483086bc-9fe1-4af9-adb0-c8c9e97243bb",
+    "colId": "a98211a9-24e6-4298-ae2d-f6ba1a9a455f",
+    "containerId": "",
+    "name": "Get One Build Json Location",
+    "url": "{{host}}/copy-path/build-json-location/first",
+    "method": "GET",
+    "sortNum": 32500,
+    "created": "2023-03-02T03:48:25.445Z",
+    "modified": "2023-03-02T03:48:58.344Z",
+    "headers": [],
+    "params": [],
+    "tests": []
   }
 ]
