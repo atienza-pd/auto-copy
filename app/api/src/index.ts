@@ -1,6 +1,7 @@
 import { AppDataSource } from "./data-source";
 import express from "express";
 import bodyParser from "body-parser";
+import dotenv from "dotenv";
 import cors from "cors";
 import listCopyEntryRoutes from "./copy-path/listCopyPathRoutes";
 import addCopyPathRoutes from "./copy-path/addCopyPathRoutes";
@@ -23,7 +24,8 @@ AppDataSource.initialize()
     })
     .catch((error) => console.log(error));
 const app = express();
-const port = 3000;
+dotenv.config();
+const port = process.env.PORT;
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use("/copy-path", [

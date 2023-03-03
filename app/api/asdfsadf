@@ -1,1 +1,0 @@
-[{"id":10,"name":"test","source":"test","destination":"test","includeFilesOnly":["test.exe"],"excludeDirectories":["test2.exe"],"excludeFiles":["test3.exe"]},{"id":11,"name":"test","source":"test","destination":"test","includeFilesOnly":[],"excludeDirectories":[],"excludeFiles":[]}]
