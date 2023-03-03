@@ -1,13 +1,13 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class CopyPath{
+export class CopyPath {
     @PrimaryGeneratedColumn()
     id: number;
     @Column()
     name: string;
     @Column()
-    source : string;
+    source: string;
     @Column()
     destination: string;
     @Column()

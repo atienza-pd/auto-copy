@@ -1,7 +1,7 @@
-import { CopyPath } from './entity/copyPath';
-import "reflect-metadata"
-import { DataSource } from "typeorm"
-import { BuildJsonLocation } from './entity/buildJsonLocation';
+import { CopyPath } from "./entity/copyPath";
+import "reflect-metadata";
+import { DataSource } from "typeorm";
+import { BuildJsonLocation } from "./entity/buildJsonLocation";
 
 export const AppDataSource = new DataSource({
     type: "sqlite",
@@ -11,4 +11,4 @@ export const AppDataSource = new DataSource({
     entities: [CopyPath, BuildJsonLocation],
     migrations: [],
     subscribers: [],
-})
+});

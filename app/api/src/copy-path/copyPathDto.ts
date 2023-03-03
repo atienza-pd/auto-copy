@@ -1,11 +1,9 @@
-import { File } from "./file";
-
-export interface CopyPathDto{
+export interface CopyPathDto {
     id?: number;
-    name: string,
-    source : string,
-    destination: string,
-    includeFilesOnly: string[],
-    excludeDirectories: string[],
-    excludeFiles: string[]
+    name: string;
+    source: string;
+    destination: string;
+    includeFilesOnly: string[];
+    excludeDirectories: string[];
+    excludeFiles: string[];
 }

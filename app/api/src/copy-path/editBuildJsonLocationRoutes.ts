@@ -36,7 +36,6 @@ router.put("/build-json-location/edit/:id", async (req, res) => {
     } catch (error) {
         res.status(400).json();
     }
-
 });
 
 export default router;

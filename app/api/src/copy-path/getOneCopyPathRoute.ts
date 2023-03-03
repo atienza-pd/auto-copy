@@ -25,14 +25,13 @@ router.get("/get/:id", async (req, res) => {
             destination: copyPath.destination,
             includeFilesOnly: JSON.parse(copyPath.includeFiles),
             excludeDirectories: JSON.parse(copyPath.excludedDirectories),
-            excludeFiles: JSON.parse(copyPath.excludedFiles)
-        }
+            excludeFiles: JSON.parse(copyPath.excludedFiles),
+        };
 
         res.json(copyPathDto);
     } catch (error) {
         res.status(400).json();
     }
-
 });
 
 export default router;
