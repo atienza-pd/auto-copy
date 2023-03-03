@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { DeleteCopyPathModalComponent } from './delete-copy-path-modal.component';
+import { DeleteCopyPathModalComponent } from "./delete-copy-path-modal.component";
 
-describe('DeleteCopyPathModalComponent', () => {
-  let component: DeleteCopyPathModalComponent;
-  let fixture: ComponentFixture<DeleteCopyPathModalComponent>;
+describe("DeleteCopyPathModalComponent", () => {
+    let component: DeleteCopyPathModalComponent;
+    let fixture: ComponentFixture<DeleteCopyPathModalComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ DeleteCopyPathModalComponent ]
-    })
-    .compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [DeleteCopyPathModalComponent],
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(DeleteCopyPathModalComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(DeleteCopyPathModalComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it("should create", () => {
+        expect(component).toBeTruthy();
+    });
 });

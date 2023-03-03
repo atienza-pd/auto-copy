@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ListCopyPathContainerComponent } from './list-copy-path-container.component';
+import { ListCopyPathContainerComponent } from "./list-copy-path-container.component";
 
-describe('ListCopyPathContainerComponent', () => {
-  let component: ListCopyPathContainerComponent;
-  let fixture: ComponentFixture<ListCopyPathContainerComponent>;
+describe("ListCopyPathContainerComponent", () => {
+    let component: ListCopyPathContainerComponent;
+    let fixture: ComponentFixture<ListCopyPathContainerComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ListCopyPathContainerComponent ]
-    })
-    .compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [ListCopyPathContainerComponent],
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(ListCopyPathContainerComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(ListCopyPathContainerComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it("should create", () => {
+        expect(component).toBeTruthy();
+    });
 });

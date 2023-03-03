@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import { EditCopyPathHttpService } from './edit-copy-path-http.service';
+import { EditCopyPathHttpService } from "./edit-copy-path-http.service";
 
-describe('EditCopyPathHttpService', () => {
-  let service: EditCopyPathHttpService;
+describe("EditCopyPathHttpService", () => {
+    let service: EditCopyPathHttpService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(EditCopyPathHttpService);
-  });
+    beforeEach(() => {
+        TestBed.configureTestingModule({});
+        service = TestBed.inject(EditCopyPathHttpService);
+    });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+    it("should be created", () => {
+        expect(service).toBeTruthy();
+    });
 });

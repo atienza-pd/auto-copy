@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import { BuildCopyPathJsonHttpService } from './build-copy-path-json-http.service';
+import { BuildCopyPathJsonHttpService } from "./build-copy-path-json-http.service";
 
-describe('BuildCopyPathJsonHttpService', () => {
-  let service: BuildCopyPathJsonHttpService;
+describe("BuildCopyPathJsonHttpService", () => {
+    let service: BuildCopyPathJsonHttpService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(BuildCopyPathJsonHttpService);
-  });
+    beforeEach(() => {
+        TestBed.configureTestingModule({});
+        service = TestBed.inject(BuildCopyPathJsonHttpService);
+    });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+    it("should be created", () => {
+        expect(service).toBeTruthy();
+    });
 });

@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import { GetOneCopyPathHttpService } from './get-one-copy-path-http.service';
+import { GetOneCopyPathHttpService } from "./get-one-copy-path-http.service";
 
-describe('GetOneCopyPathHttpService', () => {
-  let service: GetOneCopyPathHttpService;
+describe("GetOneCopyPathHttpService", () => {
+    let service: GetOneCopyPathHttpService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(GetOneCopyPathHttpService);
-  });
+    beforeEach(() => {
+        TestBed.configureTestingModule({});
+        service = TestBed.inject(GetOneCopyPathHttpService);
+    });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+    it("should be created", () => {
+        expect(service).toBeTruthy();
+    });
 });

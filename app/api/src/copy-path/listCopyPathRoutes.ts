@@ -1,12 +1,8 @@
 import { CopyPathDto } from "./copyPathDto";
-
 import { Router } from "express";
-import * as fs from "fs";
 import { AppDataSource } from "../data-source";
 import { CopyPath } from "../entity/copyPath";
 const router = Router();
-
-let store!: CopyPath[];
 
 router.get("/list", async (req, res) => {
     try {
@@ -23,14 +19,13 @@ router.get("/list", async (req, res) => {
             destination: x.destination,
             includeFilesOnly: JSON.parse(x.includeFiles),
             excludeDirectories: JSON.parse(x.excludedDirectories),
-            excludeFiles: JSON.parse(x.excludedFiles)
+            excludeFiles: JSON.parse(x.excludedFiles),
         }));
 
         res.json(copyPathsDto);
     } catch (error) {
         res.status(400).json();
     }
-
 });
 
 export default router;

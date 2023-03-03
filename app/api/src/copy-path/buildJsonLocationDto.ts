@@ -1,4 +1,4 @@
-export interface BuildJsonLocationDto{
+export interface BuildJsonLocationDto {
     id?: number;
-    location: string
+    location: string;
 }

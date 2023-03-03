@@ -1,23 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { AddCopyPathAddExcludedFilesModalComponent } from './add-copy-path-add-excluded-files-modal.component';
+import { AddCopyPathAddExcludedFilesModalComponent } from "./add-copy-path-add-excluded-files-modal.component";
 
-describe('AddCopyPathAddExcludedFilesModalComponent', () => {
-  let component: AddCopyPathAddExcludedFilesModalComponent;
-  let fixture: ComponentFixture<AddCopyPathAddExcludedFilesModalComponent>;
+describe("AddCopyPathAddExcludedFilesModalComponent", () => {
+    let component: AddCopyPathAddExcludedFilesModalComponent;
+    let fixture: ComponentFixture<AddCopyPathAddExcludedFilesModalComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ AddCopyPathAddExcludedFilesModalComponent ]
-    })
-    .compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [AddCopyPathAddExcludedFilesModalComponent],
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(AddCopyPathAddExcludedFilesModalComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(
+            AddCopyPathAddExcludedFilesModalComponent
+        );
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it("should create", () => {
+        expect(component).toBeTruthy();
+    });
 });
