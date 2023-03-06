@@ -1,24 +1,12 @@
-$isExistingPathJson = Test-Path -Path ".\paths.json";
-if ($isExistingPathJson) {
-   $paths =  Get-Content ".\paths.json" | ConvertFrom-Json;
-}else{
-   $paths = Get-Content "$env:APPDATA\auto-copy\paths.json" | ConvertFrom-Json;
-}
+$pathsJson = Get-Paths-Json
 
-$currentDate = Get-Date -UFormat "%m%d%Y";
-$logFileName = "log-$currentDate.txt";
+$logPath = Get-LogFile-Path
 
-$isExistsLogFile = Test-Path -Path ".\$logFileName";
-if ($isExistsLogFile) {
-   $logPath =  ".\$logFileName";
-}else{
-   $logPath = "$env:APPDATA\auto-copy\$logFileName";
-}
-
-ForEach ($path in $paths) {
-   $sourcePath = $path.source;
-   $destinationPath = $path.destination;
+ForEach ($path in $pathsJson) {
+   $sourcePath = Get-Single-Slash-Path -path $path.source;
+   $destinationPath =  Get-Single-Slash-Path -path $path.destination;
+   Write-Host "Source: $sourcePath"
+   Write-Host "Destination: $destinationPath"
    robocopy $sourcePath $destinationPath $path.includeFilesOnly /log+:$logPath /np /xo /mt /z /s /purge /xd $path.excludeDirectories /xf $path.excludeFiles
 }
-
-//TODO: Add Mirroring functionality
+##TODO: Add Mirroring functionality
