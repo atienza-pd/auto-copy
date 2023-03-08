@@ -42,6 +42,19 @@ function Get-Paths-Json {
     return $paths;
 }
 
+function Get-Runnable-Paths-Json {
+    $jsons = Get-Paths-Json
+    $dayOfWeek = (Get-Date).DayOfWeek
+
+    ForEach ($path in $jsons) {
+        $foundDayOfWeek = $path.activeDayOfWeek | Where-Object { $_ -eq "$dayOfWeek" }
+        if ($foundDayOfWeek.Count -eq 0) {
+            $jsons = $jsons | Where-Object { $_.id -ne $path.id }
+        }
+    }
+    return $jsons
+}
+
 function Get-LogFile-Path {
     $currentDate = Get-Date -UFormat "%m%d%Y";
     $logFileName = "log-$currentDate.txt";
