@@ -1,22 +1,12 @@
 [
-    {
-        "id": 1,
-        "name": "Wednesday",
-        "source" : "C:\\Users\\datienza.MID_OCEAN\\Desktop\\source",
-        "destination": "C:\\Users\\datienza.MID_OCEAN\\Desktop\\destination",
-        "includeFilesOnly": ["*.txt"],
-        "excludeDirectories": [],
-        "excludeFiles": [],
-        "activeDayOfWeek": ["Sunday","Tuesday"]
-    },
-    {
-        "id": 2,
-        "name": "Tuesday",
-        "source" : "C:\\Users\\datienza.MID_OCEAN\\Desktop\\source",
-        "destination": "C:\\Users\\datienza.MID_OCEAN\\Desktop\\destination",
-        "includeFilesOnly": ["*.txt"],
-        "excludeDirectories": [],
-        "excludeFiles": [],
-        "activeDayOfWeek": ["Sunday","Tuesday"]
-    }
+  {
+    "id": 1,
+    "name": "Monday",
+    "source": "C:\\Users\\datienza.MID_OCEAN\\Desktop\\source",
+    "destination": "C:\\Users\\datienza.MID_OCEAN\\Desktop\\destination",
+    "includeFilesOnly": ["*.txt"],
+    "excludeDirectories": [],
+    "excludeFiles": [],
+    "activeDayOfWeek": ["Sunday", "Tuesday", "Monday"]
+  }
 ]
