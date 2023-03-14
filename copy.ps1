@@ -10,6 +10,6 @@ ForEach ($path in $pathsJson) {
    Write-Host "Name $name"
    Write-Host "Source: $sourcePath"
    Write-Host "Destination: $destinationPath"
-   robocopy $sourcePath $destinationPath $path.includeFilesOnly /log+:$logPath /np /xo /mt /z /s /purge /xd $path.excludeDirectories /xf $path.excludeFiles
+   robocopy $sourcePath $destinationPath $path.includeFilesOnly /log+:$logPath /np /xo /z /s /purge /xd /copy:dt $path.excludeDirectories /xf $path.excludeFiles
 }
 ##TODO: Add Mirroring functionality
