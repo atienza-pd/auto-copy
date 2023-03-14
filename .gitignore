@@ -5,3 +5,4 @@ node_modules
 dist
 *.db
 .env
+tempCodeRunnerFile.ps1

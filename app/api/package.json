@@ -4,7 +4,7 @@
    "description": "",
    "main": "index.js",
    "scripts": {
-      "build": "esbuild src/index.ts --platform=node --bundle --packages=external --minify --outfile=dist/bundle.js",
+      "build": "tsc",
       "start": "nodemon src/index.ts",
       "typeorm": "typeorm-ts-node-commonjs"
    },
