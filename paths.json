@@ -2,6 +2,16 @@
   {
     "id": 1,
     "name": "Monday",
+    "source": "C:\\Users\\datienza.MID_OCEAN\\Desktop\\sources",
+    "destination": "C:\\Users\\datienza.MID_OCEAN\\Desktop\\destination",
+    "includeFilesOnly": ["*.txt"],
+    "excludeDirectories": [],
+    "excludeFiles": [],
+    "activeDayOfWeek": ["Sunday", "Tuesday", "Monday"]
+  },
+  {
+    "id": 2,
+    "name": "Mondays",
     "source": "C:\\Users\\datienza.MID_OCEAN\\Desktop\\source",
     "destination": "C:\\Users\\datienza.MID_OCEAN\\Desktop\\destination",
     "includeFilesOnly": ["*.txt"],
