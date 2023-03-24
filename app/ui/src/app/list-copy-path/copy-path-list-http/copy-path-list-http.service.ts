@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { CopyPathDto } from "../../../../../api/src/copy-path/copyPathDto";
+import { environment } from "src/environments/environment";
 
 @Injectable({
     providedIn: "root",
@@ -11,7 +12,7 @@ export class CopyPathListHttpService {
 
     execute(): Observable<CopyPathDto[]> {
         return this.http.get<CopyPathDto[]>(
-            "http://localhost:3000/copy-path/list"
+            `${environment.host}/copy-path/list`
         );
     }
 }

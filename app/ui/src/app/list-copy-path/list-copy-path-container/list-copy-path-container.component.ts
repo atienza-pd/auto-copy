@@ -5,6 +5,7 @@ import { BuildJsonLocationDto } from "../../../../../api/src/copy-path/buildJson
 import { DeleteCopyPathHttpService } from "../delete-copy-path-http/delete-copy-path-http.service";
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 
 @Component({
     selector: "app-list-copy-path-container",
@@ -94,7 +95,7 @@ export class GetFirstBuildJsonLocationHttpService {
 
     execute(): Observable<any> {
         return this.http.get<any>(
-            "http://localhost:3000/copy-path/build-json-location/first"
+            `${environment.host}/copy-path/build-json-location/first`
         );
     }
 }
@@ -107,7 +108,7 @@ export class EditFirstBuildJsonLocationHttpService {
 
     execute(id: number, location: BuildJsonLocationDto): Observable<any> {
         return this.http.put<any>(
-            `http://localhost:3000/copy-path/build-json-location/edit/${id}`,
+            `${environment.host}/copy-path/build-json-location/edit/${id}`,
             location
         );
     }

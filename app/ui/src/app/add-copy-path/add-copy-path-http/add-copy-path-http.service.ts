@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 import { CopyPathDto } from "../../../../../api/src/copy-path/copyPathDto";
 
 @Injectable({
@@ -11,7 +12,7 @@ export class AddCopyPathHttpService {
 
     execute(copyPath: CopyPathDto): Observable<any> {
         return this.http.post<any>(
-            "http://localhost:3000/copy-path/add",
+            `${environment.host}/copy-path/add`,
             copyPath
         );
     }
