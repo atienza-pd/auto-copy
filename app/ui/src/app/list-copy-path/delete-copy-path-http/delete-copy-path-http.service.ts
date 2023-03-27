@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 
 @Injectable({
     providedIn: "root",
@@ -10,7 +11,7 @@ export class DeleteCopyPathHttpService {
 
     execute(id: number): Observable<string> {
         return this.http.delete<any>(
-            `http://localhost:3000/copy-path/remove/${id}`
+            `${environment.host}/copy-path/remove/${id}`
         );
     }
 }
