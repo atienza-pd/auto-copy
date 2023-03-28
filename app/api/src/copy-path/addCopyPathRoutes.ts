@@ -6,6 +6,10 @@ const router = Router();
 
 const repo = AppDataSource.getRepository(CopyPath);
 
+
+export function testMethod(){
+    return "test";
+}
 router.post("/add", async (req, res) => {
     try {
         const copyPathDto: CopyPathDto = req.body;
