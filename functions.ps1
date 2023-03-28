@@ -73,7 +73,7 @@ function Format-Path-Double-Forward-Slash-To-Single {
         [Parameter(Mandatory = $true)]
         [string]$path
     )
-    $path = $path.Replace("\\", "\")
+    ## $path = $path.Replace("\\", "\")
     return $path;
 }
 

@@ -1,4 +1,3 @@
-
 $pathsJson = Get-Runnable-Paths-Json
 
 $logPath = Get-LogFile-Path
@@ -10,17 +9,16 @@ ForEach ($path in $pathsJson) {
    Write-Host "Name $name"
    Write-Host "Source: $sourcePath"
    Write-Host "Destination: $destinationPath"
-   $sourceFound = Test-Path -Path $sourcePath;
-   $destinationFound = Test-Path -Path $destinationPath;
-
-   if ($sourceFound -and $destinationFound) {
-      Write-Host "Executing copy..."
-      robocopy $sourcePath $destinationPath $path.includeFilesOnly /log+:$logPath /np /xo /z /s /purge /xd /copy:dt $path.excludeDirectories /xf $path.excludeFiles
-      Write-Host "Copy executed"
-   }
-
-   if (!$sourceFound -or !$destinationFound) {
+   Write-Host "Executing copy..."
+   robocopy $sourcePath $destinationPath $path.includeFilesOnly /log+:$logPath /np /xo /z /s /purge /xd /copy:dt /r:0 $path.excludeDirectories /xf $path.excludeFiles
+   
+   if ($LASTEXITCODE -ge 8) {
       Write-Host "Copy not executed. Path not found"
    }
+   else {
+      Write-Host "Copy executed"
+   }
+   
+   Write-Host ""
 }
 ##TODO: Add Mirroring functionality
