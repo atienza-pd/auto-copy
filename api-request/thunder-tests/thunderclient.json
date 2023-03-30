@@ -8,10 +8,17 @@
     "method": "GET",
     "sortNum": 10000,
     "created": "2023-02-24T03:46:13.063Z",
-    "modified": "2023-02-24T03:46:36.312Z",
+    "modified": "2023-03-29T10:53:41.673Z",
     "headers": [],
     "params": [],
-    "tests": []
+    "tests": [
+      {
+        "type": "set-env-var",
+        "custom": "json[-1].id",
+        "action": "setto",
+        "value": "{{copyPathId}}"
+      }
+    ]
   },
   {
     "_id": "0b3c9fe2-12d3-48f9-a92a-6ab7d1782408",
@@ -22,12 +29,12 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2023-02-24T03:47:17.059Z",
-    "modified": "2023-02-28T05:51:51.747Z",
+    "modified": "2023-03-30T05:46:47.412Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"test\",\n  \"source\": \"C:/Users/datienza.MID_OCEAN/Desktop/source\",\n  \"destination\": \"C:/Users/datienza.MID_OCEAN/Desktop/destination\",\n  \"includeFilesOnly\": [\n    \"*.txt\",\n    \"*.exe\"\n  ],\n  \"excludeDirectories\": [\n    \"*.txt\",\n    \"*.exe\"\n  ],\n  \"excludeFiles\": [\n    \"*.txt\",\n    \"*.exe\"\n  ]\n}",
+      "raw": "{\n  \"name\": \"test\",\n  \"source\": \"C:/Users/datienza.MID_OCEAN/Desktop/source\",\n  \"destination\": \"C:/Users/datienza.MID_OCEAN/Desktop/destination\",\n  \"includeFilesOnly\": [\n    \"*.txt\",\n    \"*.exe\"\n  ],\n  \"excludeDirectories\": [\n    \"*.txt\",\n    \"*.exe\"\n  ],\n  \"excludeFiles\": [\n    \"*.txt\",\n    \"*.exe\"\n  ],\n  \"activeDaysOfWeek\": [\n    \"Monday\",\n    \"Friday\"\n  ]\n}",
       "form": []
     },
     "tests": []
@@ -37,11 +44,11 @@
     "colId": "a98211a9-24e6-4298-ae2d-f6ba1a9a455f",
     "containerId": "",
     "name": "Get One Copy Path",
-    "url": "{{host}}/copy-path/get/3",
+    "url": "{{host}}/copy-path/get/{{copyPathId}}",
     "method": "GET",
     "sortNum": 30000,
     "created": "2023-02-24T04:36:19.950Z",
-    "modified": "2023-02-28T07:38:12.024Z",
+    "modified": "2023-03-29T10:53:27.630Z",
     "headers": [],
     "params": [],
     "tests": []

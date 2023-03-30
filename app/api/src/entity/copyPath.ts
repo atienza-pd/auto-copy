@@ -16,4 +16,8 @@ export class CopyPath {
     excludedDirectories: string;
     @Column()
     excludedFiles: string;
+    @Column({
+        nullable: true
+    })
+    activeDaysOfWeek?: string;
 }

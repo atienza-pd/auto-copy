@@ -36,6 +36,7 @@ router.post("/build", async (req, res) => {
             includeFilesOnly: JSON.parse(x.includeFiles),
             excludeDirectories: JSON.parse(x.excludedDirectories),
             excludeFiles: JSON.parse(x.excludedFiles),
+            activeDaysOfWeek : JSON.parse(x.activeDaysOfWeek)
         }));
 
         await updateFile(copyPathsDto, (err, updatedStore) => {

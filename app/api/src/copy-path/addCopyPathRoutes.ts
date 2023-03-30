@@ -26,6 +26,7 @@ router.post("/add", async (req, res) => {
             copyPathDto.excludeDirectories
         );
         copyPath.excludedFiles = JSON.stringify(copyPathDto.excludeFiles);
+        copyPath.activeDaysOfWeek = JSON.stringify(copyPathDto.activeDaysOfWeek);
         await repo.save(copyPath);
         res.status(201).json("added");
     } catch (error) {

@@ -9,5 +9,19 @@
     "created": "2023-02-24T03:46:46.070Z",
     "modified": "2023-02-24T03:46:46.070Z",
     "data": []
+  },
+  {
+    "_id": "02885214-8db7-45b4-8ff9-73ec407ca249",
+    "name": "MyEnvironment",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2023-03-29T10:52:54.426Z",
+    "modified": "2023-03-29T10:52:54.426Z",
+    "data": [
+      {
+        "name": "copyPathId",
+        "value": "24"
+      }
+    ]
   }
 ]
