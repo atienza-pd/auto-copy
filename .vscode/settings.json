@@ -1,4 +1,12 @@
 {
     "thunder-client.saveToWorkspace": true,
-    "thunder-client.workspaceRelativePath": "./api-request"
+    "thunder-client.workspaceRelativePath": "./api-request",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:auto-copy}/app/api/copyPath.db",
+            "name": "Copy Path Db"
+        }
+    ]
 }
