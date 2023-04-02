@@ -6,4 +6,4 @@ dist
 *.db
 .env
 tempCodeRunnerFile.ps1
-./paths.json
+paths.json
