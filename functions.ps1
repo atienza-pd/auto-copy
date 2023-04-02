@@ -47,7 +47,7 @@ function Get-Runnable-Paths-Json {
     $dayOfWeek = (Get-Date).DayOfWeek
 
     ForEach ($path in $jsons) {
-        $foundDayOfWeek = $path.activeDayOfWeek | Where-Object { $_ -eq "$dayOfWeek" }
+        $foundDayOfWeek = $path.activeDaysOfWeek | Where-Object { $_ -eq "$dayOfWeek" }
         if ($foundDayOfWeek.Count -eq 0) {
             $jsons = $jsons | Where-Object { $_.id -ne $path.id }
         }
