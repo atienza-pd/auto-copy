@@ -1,16 +1,5 @@
 [
   {
-    "_id": "6c4dfae1-6229-4552-95c2-2e639ede29ab",
-    "name": "(Local Env)",
-    "default": false,
-    "global": true,
-    "local": true,
-    "sortNum": -1,
-    "created": "2023-02-24T03:46:46.070Z",
-    "modified": "2023-02-24T03:46:46.070Z",
-    "data": []
-  },
-  {
     "_id": "02885214-8db7-45b4-8ff9-73ec407ca249",
     "name": "MyEnvironment",
     "default": true,
@@ -20,8 +9,9 @@
     "data": [
       {
         "name": "copyPathId",
-        "value": "24"
+        "value": "26"
       }
-    ]
+    ],
+    "envFile": "..\\prod.env"
   }
 ]
