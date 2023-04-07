@@ -7,6 +7,12 @@
             "driver": "SQLite",
             "database": "${workspaceFolder:auto-copy}/app/api/copyPath.db",
             "name": "Copy Path Db"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "Copy Path Db App Data",
+            "database": "C:\\Users\\datienza.MID_OCEAN\\AppData\\Roaming\\auto-copy\\apps\\api\\copyPath.db"
         }
     ]
 }
