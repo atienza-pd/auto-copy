@@ -37,6 +37,7 @@ router.put("/edit/:id", async (req, res) => {
             editedData.excludeDirectories
         );
         copyPath.excludedFiles = JSON.stringify(editedData.excludeFiles);
+        copyPath.activeDaysOfWeek = JSON.stringify(editedData.activeDaysOfWeek);
         await repo.save(copyPath);
 
         res.status(200).json("edited");
