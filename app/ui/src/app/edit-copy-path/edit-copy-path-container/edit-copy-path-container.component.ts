@@ -9,15 +9,7 @@ import { GetOneCopyPathHttpService } from '../get-one-copy-path-http/get-one-cop
   styleUrls: ['./edit-copy-path-container.component.scss'],
 })
 export class EditCopyPathContainerComponent implements OnInit {
-  copyPath: CopyPathDto = {
-    name: '',
-    source: '',
-    destination: '',
-    includeFilesOnly: [],
-    excludeDirectories: [],
-    excludeFiles: [],
-    activeDaysOfWeek: [],
-  };
+  copyPath!: CopyPathDto;
   routeId!: string;
 
   constructor(
