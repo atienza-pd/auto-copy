@@ -60,6 +60,18 @@
       <nz-list-footer><a nz-button (click)="addExcludeFiles()">Add Excluded File</a></nz-list-footer>
     </nz-list>
   </nz-form-item>
+  <nz-form-item>
+    <nz-list nzBordered>
+      <nz-list-header>Active Days of Week</nz-list-header>
+      <nz-list-item *ngFor="let item of copyPath?.activeDaysOfWeek; let i = index">
+        {{ item }}
+        <ul nz-list-item-actions>
+          <nz-list-item-action><a (click)="onRemoveActiveDaysOfWeek(i)">remove</a></nz-list-item-action>
+        </ul>
+      </nz-list-item>
+      <nz-list-footer><a nz-button (click)="addActiveDaysOfWeek()">Add Active Days of Week</a></nz-list-footer>
+    </nz-list>
+  </nz-form-item>
   <button
     nz-button
     class="login-form-button login-form-margin"
@@ -71,3 +83,4 @@
 <app-add-copy-path-add-included-files-only [isVisible] = "showAddIncludeFileModal" (ok)="onOkAddIncludeFileModal($event)" (hide) = "onHideAddIncludeFileModal()"></app-add-copy-path-add-included-files-only>
 <app-add-copy-path-add-excluded-files-modal [show] = "showAddExcludedFileModal" (ok)="onOkAddExcludedFileModal($event)" (hide) = "onHideAddExcludedFileModal()"></app-add-copy-path-add-excluded-files-modal>
 <app-add-copy-path-add-excluded-directories-modal [show]="showAddExcludedDirectoryModal" (ok)="onOkAddExcludedDiretoryModal($event)" (hide) = "onHideAddExcludedDiretoryModal()"></app-add-copy-path-add-excluded-directories-modal>
+<app-add-copy-path-add-active-days-of-week-modal [show]="showAddActiveDaysOfWeekModal" (ok)="onOkAddActiveDaysOfWeekModal($event)" (hide) = "onHideAddActiveDaysOfWeekModal()"></app-add-copy-path-add-active-days-of-week-modal>
