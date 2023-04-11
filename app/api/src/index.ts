@@ -11,6 +11,7 @@ import getOneCopyPathRoute from "./copy-path/getOneCopyPathRoute";
 import buildCopyPathJsonRoute from "./copy-path/buildCopyPathJsonRoute";
 import editBuildJsonLocationRoutes from "./copy-path/editBuildJsonLocationRoutes";
 import getOneBuildCopyPathJsonRoute from "./copy-path/getOneBuildCopyPathJsonRoute";
+import { migrate } from "./migrateData";
 
 const corsOptions = {
     origin: "*",
@@ -20,6 +21,7 @@ const corsOptions = {
 };
 AppDataSource.initialize()
     .then(async () => {
+        migrate();
         console.log("Database has been started!");
     })
     .catch((error) => console.log(error));
@@ -38,6 +40,7 @@ app.use("/copy-path", [
     editBuildJsonLocationRoutes,
     getOneBuildCopyPathJsonRoute,
 ]);
+
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });

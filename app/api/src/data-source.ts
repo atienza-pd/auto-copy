@@ -3,6 +3,7 @@ import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { BuildJsonLocation } from "./entity/buildJsonLocation";
 
+
 export const AppDataSource = new DataSource({
     type: "sqlite",
     database: "copyPath.db",
