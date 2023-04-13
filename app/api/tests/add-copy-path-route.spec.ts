@@ -1,8 +1,6 @@
-import { CopyPathDto } from "../src/copy-path/copyPathDto";
 import * as src from "../src/copy-path/addCopyPathRoutes";
-import * as myTest from "../src/myTest";
-import { CopyPath } from "../src/entity/copyPath";
-import * as saveCopyPathRepo  from "../src/copy-path/saveCopyPathRepo"
+import { CopyPathDto } from "../src/copy-path/copyPathDto";
+import * as saveCopyPathRepo from "../src/copy-path/saveCopyPathRepo";
 
 describe("add-copy-path-route", () => {
   test("SetValue", () => {
