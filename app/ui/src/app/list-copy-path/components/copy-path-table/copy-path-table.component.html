@@ -1,7 +1,15 @@
 <nz-table #basicTable [nzData]="copyPaths">
   <thead>
     <tr>
-      <th>Name</th>
+      <th
+        *ngFor="let column of listOfColumns; trackBy: trackByName"
+        [(nzSortOrder)]="column.sortOrder"
+        [nzSortFn]="column.sortFn"
+        [nzFilters]="column.listOfFilter"
+        [nzFilterFn]="column.filterFn"
+      >
+        {{ column.name }}
+      </th>
       <th>Source</th>
       <th>Destination</th>
       <th>Included Files Only</th>
