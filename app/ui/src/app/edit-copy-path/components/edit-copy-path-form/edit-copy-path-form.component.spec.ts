@@ -9,11 +9,12 @@ describe("EditCopyPathFormComponent", () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [EditCopyPathFormComponent],
+          
         }).compileComponents();
 
         fixture = TestBed.createComponent(EditCopyPathFormComponent);
         component = fixture.componentInstance;
-        fixture.detectChanges();
+        
     });
 
     it("should create", () => {
