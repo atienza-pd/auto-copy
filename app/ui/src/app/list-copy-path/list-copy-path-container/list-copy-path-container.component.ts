@@ -1,5 +1,5 @@
 import { CopyPathListHttpService } from "./../copy-path-list-http/copy-path-list-http.service";
-import { Component, Injectable, OnInit } from "@angular/core";
+import { Component, Injectable, OnInit, inject } from "@angular/core";
 import { CopyPathDto } from "../../../../../api/src/copy-path/copyPathDto";
 import { BuildJsonLocationDto } from "../../../../../api/src/copy-path/buildJsonLocationDto";
 import { DeleteCopyPathHttpService } from "../delete-copy-path-http/delete-copy-path-http.service";
@@ -13,6 +13,8 @@ import { environment } from "src/environments/environment";
     styleUrls: ["./list-copy-path-container.component.scss"],
 })
 export class ListCopyPathContainerComponent implements OnInit {
+    private httpService = inject(CopyPathListHttpService);
+    private httpDeleteService = inject(DeleteCopyPathHttpService);
     copyPaths!: CopyPathDto[];
     showRemoveCopyPathModal = false;
     showEditBuildJsonModal = false;
@@ -22,8 +24,6 @@ export class ListCopyPathContainerComponent implements OnInit {
     private locationSubject = new BehaviorSubject<string>("");
     location$ = this.locationSubject.asObservable();
     constructor(
-        private httpService: CopyPathListHttpService,
-        private httpDeleteService: DeleteCopyPathHttpService,
         private getFirstBuildJsonLocationHttpService: GetFirstBuildJsonLocationHttpService,
         private editFirstBuildJsonLocationHttpService: EditFirstBuildJsonLocationHttpService
     ) {}
