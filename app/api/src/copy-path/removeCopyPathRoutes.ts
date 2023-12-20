@@ -1,4 +1,4 @@
-import { CopyPath } from "./../entity/copyPath";
+import { CopyPath } from "./../entity/copyPath.entity";
 import { AppDataSource } from "./../data-source";
 import { Router } from "express";
 const router = Router();

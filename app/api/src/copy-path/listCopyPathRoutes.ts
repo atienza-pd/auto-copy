@@ -1,7 +1,7 @@
 import { CopyPathDto } from "./copyPathDto";
 import { Router } from "express";
 import { AppDataSource } from "../data-source";
-import { CopyPath } from "../entity/copyPath";
+import { CopyPath } from "../entity/copyPath.entity";
 const router = Router();
 
 router.get("/list", async (req, res) => {

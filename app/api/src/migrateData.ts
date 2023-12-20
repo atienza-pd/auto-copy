@@ -1,8 +1,8 @@
 import * as fs from "fs";
 import { AppDataSource } from "./data-source";
-import { BuildJsonLocation } from "./entity/buildJsonLocation";
+import { BuildJsonLocation } from "./entity/buildJsonLocation.entity";
 import { Not } from "typeorm";
-import { CopyPath } from "./entity/copyPath";
+import { CopyPath } from "./entity/copyPath.entity";
 import { CopyPathDto } from "./copy-path/copyPathDto";
 
 const repo = AppDataSource.getRepository(BuildJsonLocation);
@@ -10,7 +10,7 @@ const copyPathRepo = AppDataSource.getRepository(CopyPath);
 
   export async function readPathsJsonFileToObject() {
     const location = await repo.findOne({ where: { location: Not("") } });
-    let rawdata = fs.readFileSync(location.location);
+    let rawdata = fs.readFileSync(location?.location);
     let data = JSON.parse(rawdata.toString());
     return data;
   }

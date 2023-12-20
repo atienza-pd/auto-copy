@@ -1,4 +1,4 @@
-import { BuildJsonLocation } from "./../entity/buildJsonLocation";
+import { BuildJsonLocation } from "./../entity/buildJsonLocation.entity";
 import { BuildJsonLocationDto } from "./buildJsonLocationDto";
 import { Router } from "express";
 import { AppDataSource } from "../data-source";
