@@ -1,5 +1,5 @@
 import { AppDataSource } from "../data-source";
-import { CopyPath } from "../entity/copyPath";
+import { CopyPath } from "../entity/copyPath.entity";
 
 const repo = AppDataSource.getRepository(CopyPath);
 

@@ -1,6 +1,6 @@
 import { CopyPathDto } from "./copyPathDto";
 import { Router } from "express";
-import { CopyPath } from "../entity/copyPath";
+import { CopyPath } from "../entity/copyPath.entity";
 import * as saveCopyPathRepo  from "./saveCopyPathRepo"
 const router = Router();
 

@@ -1,9 +1,9 @@
 import { CopyPathDto } from "./copyPathDto";
 import { Router } from "express";
 import { AppDataSource } from "../data-source";
-import { CopyPath } from "../entity/copyPath";
+import { CopyPath } from "../entity/copyPath.entity";
 import * as fs from "fs";
-import { BuildJsonLocation } from "../entity/buildJsonLocation";
+import { BuildJsonLocation } from "../entity/buildJsonLocation.entity";
 import { Not } from "typeorm";
 const router = Router();
 const repo = AppDataSource.getRepository(BuildJsonLocation);

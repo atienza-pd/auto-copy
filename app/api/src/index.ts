@@ -21,7 +21,6 @@ const corsOptions = {
 };
 AppDataSource.initialize()
     .then(async () => {
-        migrate();
         console.log("Database has been started!");
     })
     .catch((error) => console.log(error));
