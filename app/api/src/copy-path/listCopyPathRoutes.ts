@@ -12,7 +12,7 @@ router.get("/list", async (req, res) => {
             return;
         }
 
-        const copyPathsDto: CopyPathDto[] = data.flatMap((x: CopyPath) => ({
+        const copyPathsDto: CopyPathDto[] = data.map((x: CopyPath) => ({
             id: x.id,
             name: x.name,
             source: x.source,
