@@ -9,7 +9,7 @@
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "sourceMap": true,
-    "outDir": "./dist",
+    "outDir": "C:/Users/datienza.MID_OCEAN/AppData/Roaming/auto-copy/apps/api",
     "baseUrl": ".",
     "paths": {
       "*": ["node_modules/*", "src/types/*"]

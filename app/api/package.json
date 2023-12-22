@@ -4,7 +4,8 @@
    "description": "",
    "main": "index.js",
    "scripts": {
-      "build": "tsc --build --clean && tsc --build",
+      "build-local": "tsc --build --clean && tsc --build",
+      "build-prod": "tsc --project tsconfig.production.json && tsc --project tsconfig.production.package.json",
       "start": "nodemon src/index.ts",
       "typeorm": "typeorm-ts-node-commonjs",
       "typeorm-migration-generate": "typeorm-ts-node-commonjs migration:generate -d ./src/data-source.ts",
