@@ -7,12 +7,11 @@ const router = Router();
 export function setValue(input: CopyPathDto): CopyPath {
   return {
     ...input,
-    id: 0,
     includeFiles: JSON.stringify(input.includeFilesOnly),
     excludedDirectories: JSON.stringify(input.excludeDirectories),
     excludedFiles: JSON.stringify(input.excludeFiles),
     activeDaysOfWeek: JSON.stringify(input.activeDaysOfWeek),
-  };
+  } as CopyPath;
 }
 
 export async function add(copyPathDto : CopyPathDto){
