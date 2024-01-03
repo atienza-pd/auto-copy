@@ -26,7 +26,7 @@ router.get("/get/:id", async (req, res) => {
             includeFilesOnly: JSON.parse(copyPath.includeFiles),
             excludeDirectories: JSON.parse(copyPath.excludedDirectories),
             excludeFiles: JSON.parse(copyPath.excludedFiles),
-            activeDaysOfWeek: JSON.parse(copyPath.activeDaysOfWeek),
+            activeDaysOfWeek: JSON.parse(copyPath.activeDaysOfWeek ?? '[]'),
         };
 
         res.json(copyPathDto);
