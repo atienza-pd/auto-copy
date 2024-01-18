@@ -13,7 +13,7 @@ export class CopyPath {
   @Column()
   includeFiles!: string;
   @Column()
-  excludedDirectories!: jkkkkkk;
+  excludedDirectories!: string;
   @Column()
   excludedFiles!: string;
   @Column({

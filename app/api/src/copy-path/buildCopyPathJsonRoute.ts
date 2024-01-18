@@ -33,6 +33,7 @@ router.post("/build", async (_req, res) => {
             name: x.name,
             source: x.source,
             destination: x.destination,
+            showProgressInLogs: x.showProgressInLogs,
             includeFilesOnly: JSON.parse(x.includeFiles),
             excludeDirectories: JSON.parse(x.excludedDirectories),
             excludeFiles: JSON.parse(x.excludedFiles),

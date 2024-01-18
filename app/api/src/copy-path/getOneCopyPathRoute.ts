@@ -9,20 +9,23 @@ const repo = AppDataSource.getRepository(CopyPath);
 
 router.get("/get/:id", async (req, res) => {
     try {
-        const id: string = req.params.id;
+        const _id: string = req.params.id;
 
-        const copyPath = await repo.findOneBy({ id: parseInt(id) });
+        const copyPath = await repo.findOneBy({ id: parseInt(_id) });
 
         if (!copyPath) {
             res.status(422).json({ error: "Record not found" });
             return;
         }
 
+        const { id, name, source, destination, showProgressInLogs } : CopyPath = copyPath;
+
         const copyPathDto: CopyPathDto = {
-            id: copyPath.id,
-            name: copyPath.name,
-            source: copyPath.source,
-            destination: copyPath.destination,
+            id,
+            name,
+            source,
+            destination,
+            showProgressInLogs,
             includeFilesOnly: JSON.parse(copyPath.includeFiles),
             excludeDirectories: JSON.parse(copyPath.excludedDirectories),
             excludeFiles: JSON.parse(copyPath.excludedFiles),

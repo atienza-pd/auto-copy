@@ -7,4 +7,5 @@ export interface CopyPathDto {
     excludeDirectories: string[];
     excludeFiles: string[];
     activeDaysOfWeek: string[];
+    showProgressInLogs: boolean;
 }
