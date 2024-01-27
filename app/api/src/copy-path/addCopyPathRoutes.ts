@@ -11,7 +11,7 @@ export function setValue(input: CopyPathDto): CopyPath {
     excludedDirectories: JSON.stringify(input.excludeDirectories),
     excludedFiles: JSON.stringify(input.excludeFiles),
     activeDaysOfWeek: JSON.stringify(input.activeDaysOfWeek),
-  } as CopyPath;
+  } as unknown as CopyPath;
 }
 
 export async function add(copyPathDto : CopyPathDto){

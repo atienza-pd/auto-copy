@@ -8,9 +8,9 @@ import { Not } from "typeorm";
 const router = Router();
 const repo = AppDataSource.getRepository(BuildJsonLocation);
 
-const updateFile = async (data, callback) => {
+const updateFile = async (data : any, callback: any) => {
     const location = await repo.findOne({ where: { location: Not("") } });
-    fs.writeFile(location.location, JSON.stringify(data), (err) => {
+    fs.writeFile(location?.location ?? '', JSON.stringify(data), (err) => {
         if (err) {
             callback({ error: "Failed to update file" }, null);
         } else {
@@ -19,7 +19,7 @@ const updateFile = async (data, callback) => {
     });
 };
 
-router.post("/build", async (req, res) => {
+router.post("/build", async (_req, res) => {
     try {
         const data = await AppDataSource.manager.find(CopyPath);
 
@@ -33,13 +33,14 @@ router.post("/build", async (req, res) => {
             name: x.name,
             source: x.source,
             destination: x.destination,
+            showProgressInLogs: x.showProgressInLogs,
             includeFilesOnly: JSON.parse(x.includeFiles),
             excludeDirectories: JSON.parse(x.excludedDirectories),
             excludeFiles: JSON.parse(x.excludedFiles),
-            activeDaysOfWeek : JSON.parse(x.activeDaysOfWeek)
+            activeDaysOfWeek : JSON.parse(x.activeDaysOfWeek ?? '[]')
         }));
 
-        await updateFile(copyPathsDto, (err, updatedStore) => {
+        await updateFile(copyPathsDto, (err: any, updatedStore: any) => {
             if (err) {
                 console.log(updatedStore);
                 res.status(500).json(err);
