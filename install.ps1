@@ -1,7 +1,6 @@
-. .\build.ps1
 $installPath = "$env:APPDATA/auto-copy"
 $currentDate = Get-Date -UFormat "%m%d%Y";
-$currentPath = "./";
+$currentPath = ".\";
 $files = "output.ps1";
 $isExistsLogsFolder = Test-Path -Path ".\install-logs";
 if (!$isExistsLogsFolder) {
