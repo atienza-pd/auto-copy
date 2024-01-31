@@ -7,3 +7,4 @@ dist
 *.env
 tempCodeRunnerFile.ps1
 paths.json
+output.ps1

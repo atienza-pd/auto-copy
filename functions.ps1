@@ -47,11 +47,17 @@ function Get-Runnable-Paths-Json {
     $dayOfWeek = (Get-Date).DayOfWeek
 
     ForEach ($path in $jsons) {
+        $disable = [boolean]::Parse($path.disable ?? "false");
+        if ($disable) {
+            return;
+        }
+
         $foundDayOfWeek = $path.activeDaysOfWeek | Where-Object { $_ -eq "$dayOfWeek" }
         if ($foundDayOfWeek.Count -eq 0) {
             $jsons = $jsons | Where-Object { $_.id -ne $path.id }
         }
     }
+    Write-Host $jsons;
     return $jsons
 }
 
