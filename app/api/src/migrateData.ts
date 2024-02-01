@@ -10,7 +10,7 @@ const copyPathRepo = AppDataSource.getRepository(CopyPath);
 
   export async function readPathsJsonFileToObject() {
     const location = await repo.findOne({ where: { location: Not("") } });
-    let rawdata = fs.readFileSync(location?.location);
+    let rawdata = fs.readFileSync(location?.location ?? '');
     let data = JSON.parse(rawdata.toString());
     return data;
   }

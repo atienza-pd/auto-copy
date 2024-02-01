@@ -22,4 +22,6 @@ export class CopyPath {
   activeDaysOfWeek?: string;
   @Column({default: false})
   showProgressInLogs!: boolean;
+  @Column({default: false})
+  disable!: boolean;
 }

@@ -57,7 +57,7 @@ function Get-Runnable-Paths-Json {
             $jsons = $jsons | Where-Object { $_.id -ne $path.id }
         }
     }
-    Write-Host $jsons;
+    
     return $jsons
 }
 
