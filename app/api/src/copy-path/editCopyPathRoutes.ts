@@ -38,9 +38,8 @@ router.put("/edit/:id", async (req, res) => {
       excludedFiles: JSON.stringify(editedData.excludeFiles),
       activeDaysOfWeek: JSON.stringify(editedData.activeDaysOfWeek),
     };
-    console.log(freshCopyPath);
-    await repo.save(freshCopyPath);
 
+    await repo.save(freshCopyPath);
     res.status(200).json("edited");
   } catch (error) {
     console.log(error);

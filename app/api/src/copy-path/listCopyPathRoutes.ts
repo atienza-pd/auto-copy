@@ -12,12 +12,13 @@ router.get("/list", async (req, res) => {
             return;
         }
 
-        const copyPathsDto: CopyPathDto[] = data.map(({ id, name, source, destination, includeFiles, excludedDirectories, excludedFiles, activeDaysOfWeek, showProgressInLogs }: CopyPath) => ({
+        const copyPathsDto: CopyPathDto[] = data.map(({ id, name, source, destination, includeFiles, excludedDirectories, excludedFiles, activeDaysOfWeek, showProgressInLogs, disable }: CopyPath) => ({
             id,
             name,
             source,
             destination,
             showProgressInLogs,
+            disable,
             includeFilesOnly: JSON.parse(includeFiles),
             excludeDirectories: JSON.parse(excludedDirectories),
             excludeFiles: JSON.parse(excludedFiles),

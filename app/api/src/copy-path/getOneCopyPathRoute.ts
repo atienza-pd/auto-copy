@@ -18,13 +18,14 @@ router.get("/get/:id", async (req, res) => {
             return;
         }
 
-        const { id, name, source, destination, showProgressInLogs } : CopyPath = copyPath;
+        const { id, name, source, destination, showProgressInLogs, disable } : CopyPath = copyPath;
 
         const copyPathDto: CopyPathDto = {
             id,
             name,
             source,
             destination,
+            disable,
             showProgressInLogs,
             includeFilesOnly: JSON.parse(copyPath.includeFiles),
             excludeDirectories: JSON.parse(copyPath.excludedDirectories),

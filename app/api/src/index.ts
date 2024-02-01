@@ -11,7 +11,6 @@ import getOneCopyPathRoute from "./copy-path/getOneCopyPathRoute";
 import buildCopyPathJsonRoute from "./copy-path/buildCopyPathJsonRoute";
 import editBuildJsonLocationRoutes from "./copy-path/editBuildJsonLocationRoutes";
 import getOneBuildCopyPathJsonRoute from "./copy-path/getOneBuildCopyPathJsonRoute";
-import { migrate } from "./migrateData";
 
 const corsOptions = {
     origin: "*",
