@@ -8,6 +8,7 @@ import { CopyPathDto } from '../../../../../../api/src/copy-path/copyPathDto';
   styleUrls: ['./edit-copy-path-form.component.scss'],
 })
 export class EditCopyPathFormComponent implements OnInit {
+  public span : number = 12;
   @Input() copyPath!: CopyPathDto;
     showAddActiveDaysOfWeekModal = false;
 
@@ -59,10 +60,8 @@ export class EditCopyPathFormComponent implements OnInit {
   @Output() submitForm = new EventEmitter();
 
   onSubmitForm() {
-    this.copyPath.name = this.validateForm.controls['name'].value;
-    this.copyPath.source = this.validateForm.controls['source'].value;
-    this.copyPath.destination = this.validateForm.controls['destination'].value;
-    this.submitForm.emit(this.copyPath);
+
+    this.submitForm.emit({...this.copyPath, ...this.validateForm.getRawValue()});
   }
   addActiveDaysOfWeek() {
     this.showAddActiveDaysOfWeekModal = true;
@@ -86,6 +85,8 @@ export class EditCopyPathFormComponent implements OnInit {
       name: [this.copyPath.name, [Validators.required]],
       source: [this.copyPath.source, [Validators.required]],
       destination: [this.copyPath.destination, [Validators.required]],
+      showProgressInLogs: this.copyPath.showProgressInLogs,
+      disable: this.copyPath.disable
     });
   }
 }

@@ -72,6 +72,8 @@ export class AddCopyPathFormComponent implements OnInit {
     excludeDirectories: [],
     excludeFiles: [],
     activeDaysOfWeek: [],
+    disable: false,
+    showProgressInLogs: false
   };
   onSubmitForm() {
     this.copyPath.name = this.validateForm.controls['name'].value;
