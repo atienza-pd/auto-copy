@@ -46,19 +46,12 @@ function Get-Runnable-Paths-Json {
     $jsons = Get-Paths-Json
     $dayOfWeek = (Get-Date).DayOfWeek
 
-    ForEach ($path in $jsons) {
-        $disable = [boolean]::Parse($path.disable ?? "false");
-        if ($disable) {
-            return;
-        }
-
-        $foundDayOfWeek = $path.activeDaysOfWeek | Where-Object { $_ -eq "$dayOfWeek" }
-        if ($foundDayOfWeek.Count -eq 0) {
-            $jsons = $jsons | Where-Object { $_.id -ne $path.id }
-        }
+    $enabledPaths = $jsons | Where-Object { 
+        ($_.disable -eq [bool]::Parse("false")) -and 
+        ($_.activeDaysOfWeek | Where-Object { $_ -eq "$dayOfWeek" }).Count -eq 1 
     }
-    
-    return $jsons
+
+    return $enabledPaths;
 }
 
 function Get-LogFile-Path {
@@ -88,6 +81,10 @@ function Get-Single-Slash-Path {
         [Parameter(Mandatory = $true)]
         [string]$path
     )
+
+    if($path -eq ""){
+        return;
+    }
 
     return Format-Path-Double-Forward-Slash-To-Single -path $path
 }
