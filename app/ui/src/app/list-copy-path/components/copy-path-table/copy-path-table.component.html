@@ -19,13 +19,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let data of basicTable.data">
-      <td>{{ data.name }}</td>
-      <td>{{ data.source }}</td>
-      <td>{{ data.destination }}</td>
-      <td>{{ data.includeFilesOnly }}</td>
-      <td>{{ data.excludeDirectories }}</td>
-      <td>{{ data.excludeFiles }}</td>
+    <tr *ngFor="let data of basicTable.data;">
+      <td [ngClass]="data.disable ? 'disable' : ''">{{ data.name }}</td>
+      <td [ngClass]="data.disable ? 'disable' : ''">{{ data.source }}</td>
+      <td [ngClass]="data.disable ? 'disable' : ''">{{ data.destination }}</td>
+      <td [ngClass]="data.disable ? 'disable' : ''">{{ data.includeFilesOnly }}</td>
+      <td [ngClass]="data.disable ? 'disable' : ''">{{ data.excludeDirectories }}</td>
+      <td [ngClass]="data.disable ? 'disable' : ''">{{ data.excludeFiles }}</td>
       <td>
         <a
           nz-button

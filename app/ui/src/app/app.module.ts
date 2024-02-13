@@ -40,6 +40,7 @@ import { NzIconModule } from "ng-zorro-antd/icon";
 import { NzToolTipModule } from "ng-zorro-antd/tooltip";
 import { EditBuildJsonLocationModalComponent } from "./list-copy-path/components/edit-build-json-location-modal/edit-build-json-location-modal.component";
 import { AddCopyPathAddActiveDaysOfWeekModalComponent } from './add-copy-path/components/add-copy-path-add-active-days-of-week-modal/add-copy-path-add-active-days-of-week-modal.component';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
 registerLocaleData(en);
 
 @NgModule({
@@ -80,6 +81,7 @@ registerLocaleData(en);
         NzDropDownModule,
         NzIconModule,
         NzToolTipModule,
+        NzSwitchModule
     ],
     providers: [
         CopyPathListHttpService,

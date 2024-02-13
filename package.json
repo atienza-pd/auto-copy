@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "sqlite3": "^5.1.6"
-  },
-  "devDependencies": {
-    "@types/cors": "^2.8.17"
-  }
-}
