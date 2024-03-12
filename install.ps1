@@ -1,7 +1,7 @@
 $installPath = "$env:APPDATA/auto-copy"
 $currentDate = Get-Date -UFormat "%m%d%Y";
 $currentPath = ".\";
-$files = "output.ps1";
+$files = "output.ps1","ftp-output.ps1";
 $isExistsLogsFolder = Test-Path -Path ".\install-logs";
 if (!$isExistsLogsFolder) {
     mkdir .\install-logs;

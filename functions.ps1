@@ -27,8 +27,8 @@ function Get-Env {
         if ($key -eq $keyParam) {
             return $value;
         }
-        return '';
     }
+    return '';
 }
 
 function Get-Paths-Json {
@@ -47,10 +47,22 @@ function Get-Runnable-Paths-Json {
     $dayOfWeek = (Get-Date).DayOfWeek
 
     $enabledPaths = $jsons | Where-Object { 
+        ($_.name -notlike "*Network*") -and 
         ($_.disable -eq [bool]::Parse("false")) -and 
         ($_.activeDaysOfWeek | Where-Object { $_ -eq "$dayOfWeek" }).Count -eq 1 
     }
-    Write-Host $enabledPaths
+    return $enabledPaths;
+}
+
+function Get-RunnablePathsJsonNetwork {
+    $jsons = Get-Paths-Json
+    $dayOfWeek = (Get-Date).DayOfWeek
+
+    $enabledPaths = $jsons | Where-Object { 
+        ($_.name -like '*Network*') -and 
+        ($_.disable -eq [bool]::Parse("false")) -and 
+        ($_.activeDaysOfWeek | Where-Object { $_ -eq "$dayOfWeek" }).Count -eq 1 
+    }
     return $enabledPaths;
 }
 
@@ -82,7 +94,7 @@ function Get-Single-Slash-Path {
         [string]$path
     )
 
-    if($path -eq ""){
+    if ($path -eq "") {
         return;
     }
 
