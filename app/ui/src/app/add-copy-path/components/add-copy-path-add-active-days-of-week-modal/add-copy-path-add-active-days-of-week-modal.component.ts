@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
-@Component({
+@Component({ standalone: false,
   selector: 'app-add-copy-path-add-active-days-of-week-modal',
   templateUrl: './add-copy-path-add-active-days-of-week-modal.component.html',
   styleUrls: ['./add-copy-path-add-active-days-of-week-modal.component.scss'],

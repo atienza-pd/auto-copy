@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
 
-@Component({
+@Component({ standalone: false,
     selector: "app-add-copy-path-add-included-files-only",
     templateUrl: "./add-copy-path-add-included-files-only.component.html",
     styleUrls: ["./add-copy-path-add-included-files-only.component.scss"],

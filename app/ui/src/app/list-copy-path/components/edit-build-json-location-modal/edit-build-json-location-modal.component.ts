@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
-@Component({
+@Component({ standalone: false,
     selector: "app-edit-build-json-location-modal",
     templateUrl: "./edit-build-json-location-modal.component.html",
     styleUrls: ["./edit-build-json-location-modal.component.scss"],
