@@ -9,7 +9,7 @@ import { NZ_I18N, en_US } from "ng-zorro-antd/i18n";
 import { registerLocaleData } from "@angular/common";
 import en from "@angular/common/locales/en";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NzPageHeaderModule } from "ng-zorro-antd/page-header";
 import { NzButtonModule } from "ng-zorro-antd/button";
@@ -43,8 +43,7 @@ import { AddCopyPathAddActiveDaysOfWeekModalComponent } from './add-copy-path/co
 import { NzSwitchModule } from 'ng-zorro-antd/switch';
 registerLocaleData(en);
 
-@NgModule({
-    declarations: [
+@NgModule({ declarations: [
         AppComponent,
         ListCopyPathContainerComponent,
         CopyPathMenuControlComponent,
@@ -60,8 +59,7 @@ registerLocaleData(en);
         EditBuildJsonLocationModalComponent,
         AddCopyPathAddActiveDaysOfWeekModalComponent,
     ],
-    imports: [
-        BrowserModule,
+    bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule,
         FormsModule,
         HttpClientModule,
@@ -70,7 +68,6 @@ registerLocaleData(en);
         NzButtonModule,
         NzTableModule,
         NzDividerModule,
-        HttpClientModule,
         NzFormModule,
         ReactiveFormsModule,
         NzInputModule,
@@ -81,16 +78,13 @@ registerLocaleData(en);
         NzDropDownModule,
         NzIconModule,
         NzToolTipModule,
-        NzSwitchModule
-    ],
-    providers: [
+        NzSwitchModule], providers: [
         CopyPathListHttpService,
         AddCopyPathHttpService,
         DeleteCopyPathHttpService,
         GetOneCopyPathHttpService,
         BuildCopyPathJsonHttpService,
         { provide: NZ_I18N, useValue: en_US },
-    ],
-    bootstrap: [AppComponent],
-})
+        provideHttpClient(withInterceptorsFromDi()),
+    ] })
 export class AppModule {}
