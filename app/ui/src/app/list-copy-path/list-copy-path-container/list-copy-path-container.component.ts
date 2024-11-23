@@ -7,7 +7,7 @@ import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 
-@Component({
+@Component({ standalone: false,
     selector: "app-list-copy-path-container",
     templateUrl: "./list-copy-path-container.component.html",
     styleUrls: ["./list-copy-path-container.component.scss"],

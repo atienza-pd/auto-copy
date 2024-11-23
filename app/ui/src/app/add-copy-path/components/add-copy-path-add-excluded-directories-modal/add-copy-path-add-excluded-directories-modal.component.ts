@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
-@Component({
+@Component({ standalone: false,
+    
     selector: "app-add-copy-path-add-excluded-directories-modal",
     templateUrl:
         "./add-copy-path-add-excluded-directories-modal.component.html",

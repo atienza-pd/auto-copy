@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CopyPathDto } from '../../../../../../api/src/copy-path/copyPathDto';
 
-@Component({
+@Component({ standalone: false,
   selector: 'app-add-copy-path-form',
   templateUrl: './add-copy-path-form.component.html',
   styleUrls: ['./add-copy-path-form.component.scss'],

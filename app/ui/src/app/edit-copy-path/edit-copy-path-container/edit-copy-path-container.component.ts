@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CopyPathDto } from '../../../../../api/src/copy-path/copyPathDto';
 import { EditCopyPathHttpService } from '../edit-copy-path-http/edit-copy-path-http.service';
 import { GetOneCopyPathHttpService } from '../get-one-copy-path-http/get-one-copy-path-http.service';
-@Component({
+@Component({ standalone: false,
   selector: 'app-edit-copy-path-container',
   templateUrl: './edit-copy-path-container.component.html',
   styleUrls: ['./edit-copy-path-container.component.scss'],

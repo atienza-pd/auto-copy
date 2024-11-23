@@ -19,7 +19,7 @@ interface ColumnItem {
     filterFn: NzTableFilterFn<DataItem> | null;
   }
 
-@Component({
+@Component({ standalone: false,
     selector: "app-copy-path-table",
     templateUrl: "./copy-path-table.component.html",
     styleUrls: ["./copy-path-table.component.scss"],

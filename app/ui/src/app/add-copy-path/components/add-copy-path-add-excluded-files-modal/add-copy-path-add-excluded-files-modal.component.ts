@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
-@Component({
+@Component({ standalone: false,
+    
     selector: "app-add-copy-path-add-excluded-files-modal",
     templateUrl: "./add-copy-path-add-excluded-files-modal.component.html",
     styleUrls: ["./add-copy-path-add-excluded-files-modal.component.scss"],

@@ -3,7 +3,7 @@ import { NzMessageService } from "ng-zorro-antd/message";
 import { Observable } from "rxjs";
 import { BuildCopyPathJsonHttpService } from "../../build-copy-path-json-http/build-copy-path-json-http.service";
 
-@Component({
+@Component({ standalone: false,
     selector: "app-copy-path-menu-control",
     templateUrl: "./copy-path-menu-control.component.html",
     styleUrls: ["./copy-path-menu-control.component.scss"],

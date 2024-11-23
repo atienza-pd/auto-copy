@@ -62,7 +62,6 @@ registerLocaleData(en);
     bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule,
         FormsModule,
-        HttpClientModule,
         BrowserAnimationsModule,
         NzPageHeaderModule,
         NzButtonModule,
