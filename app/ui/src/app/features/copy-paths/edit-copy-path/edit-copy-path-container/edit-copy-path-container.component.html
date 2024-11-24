@@ -1,0 +1,5 @@
+<app-edit-copy-path-form
+  *ngIf="copyPathResource.value()"
+  [copyPath]="copyPathResource.value() ?? default"
+  (submitForm)="onSubmitForm($event)"
+></app-edit-copy-path-form>
