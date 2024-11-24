@@ -1,0 +1,24 @@
+<app-copy-path-menu-control
+  [location$]="location$"
+  (showEditBuildJsonLocationModal)="onShowEditBuildJsonLocationModal()"
+></app-copy-path-menu-control>
+<div class="table">
+  @if(!copyPaths.isLoading()){
+  <app-copy-path-table
+    [copyPaths]="copyPaths.value() ?? []"
+    (showRemoveCopyPathModal)="onShowRemoveCopyPathModal($event)"
+  ></app-copy-path-table>
+  }
+</div>
+
+<app-delete-copy-path-modal
+  [show]="showRemoveCopyPathModal"
+  (ok)="onOkRemoveCopyPathModal()"
+  (hide)="onHideRemoveCopyPathModal()"
+></app-delete-copy-path-modal>
+<app-edit-build-json-location-modal
+  [location]="location"
+  [show]="showEditBuildJsonModal"
+  (ok)="onOkEditBuildJsonModal($event)"
+  (hide)="onHideEditBuildJsonModal()"
+></app-edit-build-json-location-modal>
