@@ -6,7 +6,7 @@ export interface CopyPathDto {
   includeFilesOnly: any[];
   excludeDirectories: any[];
   excludeFiles: any[];
-  activeDaysOfWeek: any[];
+  activeDaysOfWeek: string[];
   disable: boolean;
   showProgressInLogs: boolean;
 }

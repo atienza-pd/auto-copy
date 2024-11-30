@@ -6,7 +6,7 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 @Component({
   standalone: true,
   imports: [NzModalModule, FormsModule, NzInputModule],
-  selector: 'app-add-copy-path-add-excluded-directories-modal',
+  selector: 'app-excluded-directories-modal',
   templateUrl: './add-copy-path-add-excluded-directories-modal.component.html',
   styleUrls: ['./add-copy-path-add-excluded-directories-modal.component.scss'],
 })

@@ -11,12 +11,12 @@ import { EditCopyPathHttpService } from '../edit-copy-path-http/edit-copy-path-h
 import { GetOneCopyPathHttpService } from '../get-one-copy-path-http/get-one-copy-path-http.service';
 import { CopyPathDto } from '../../models';
 import { CommonModule } from '@angular/common';
-import { EditCopyPathFormComponent } from '../components/edit-copy-path-form/edit-copy-path-form.component';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { environment } from 'src/environments/environment';
+import { FormEditorComponent } from '../../shared/components/form-editor/form-editor.component';
 @Component({
   standalone: true,
-  imports: [CommonModule, EditCopyPathFormComponent],
+  imports: [CommonModule, FormEditorComponent],
   selector: 'app-edit-copy-path-container',
   templateUrl: './edit-copy-path-container.component.html',
   styleUrls: ['./edit-copy-path-container.component.scss'],
@@ -28,10 +28,8 @@ export class EditCopyPathContainerComponent {
   private id = computed(() => this.paramMap()?.get('id') ?? '');
   public default = {} as CopyPathDto;
 
-  public copyPathResource = resource({
+  public dataResource = resource({
     request: () => ({ id: this.id() }),
-    // Define an async loader that retrieves data.
-    // The resource calls this function every time the `request` value changes.
     loader: ({ request, abortSignal }) =>
       fetch(`${environment.host}/copy-path/get/${request.id}`, {
         signal: abortSignal,

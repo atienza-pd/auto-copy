@@ -6,7 +6,7 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 @Component({
   standalone: true,
   imports: [NzModalModule, FormsModule, NzInputModule],
-  selector: 'app-add-copy-path-add-active-days-of-week-modal',
+  selector: 'app-active-days-of-week-modal',
   templateUrl: './add-copy-path-add-active-days-of-week-modal.component.html',
   styleUrls: ['./add-copy-path-add-active-days-of-week-modal.component.scss'],
 })
