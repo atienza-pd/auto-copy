@@ -6,7 +6,7 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 @Component({
   standalone: true,
   imports: [NzModalModule, FormsModule, NzInputModule],
-  selector: 'app-add-copy-path-add-included-files-only',
+  selector: 'app-included-files-modal',
   templateUrl: './add-copy-path-add-included-files-only.component.html',
   styleUrls: ['./add-copy-path-add-included-files-only.component.scss'],
 })
