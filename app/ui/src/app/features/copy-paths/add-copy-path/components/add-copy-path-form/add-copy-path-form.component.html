@@ -115,16 +115,6 @@
     </button>
   </nz-form-item>
 </form>
-<app-included-files-modal
-  [isVisible]="showAddIncludeFileModal"
-  (ok)="onOkAddIncludeFileModal($event)"
-  (hide)="onHideAddIncludeFileModal()"
-></app-included-files-modal>
-<app-excluded-files-modal
-  [show]="showAddExcludedFileModal"
-  (ok)="onOkAddExcludedFileModal($event)"
-  (hide)="onHideAddExcludedFileModal()"
-></app-excluded-files-modal>
 <app-excluded-directories-modal
   [show]="showAddExcludedDirectoryModal"
   (ok)="onOkAddExcludedDiretoryModal($event)"

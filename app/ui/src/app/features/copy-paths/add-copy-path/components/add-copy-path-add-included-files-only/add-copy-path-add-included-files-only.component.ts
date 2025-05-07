@@ -6,20 +6,10 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 @Component({
   standalone: true,
   imports: [NzModalModule, FormsModule, NzInputModule],
-  selector: 'app-included-files-modal',
+  selector: 'app-file-form-modal',
   templateUrl: './add-copy-path-add-included-files-only.component.html',
   styleUrls: ['./add-copy-path-add-included-files-only.component.scss'],
 })
 export class AddCopyPathAddIncludedFilesOnlyComponent {
-  @Output() hide = new EventEmitter();
-  @Output() ok = new EventEmitter();
-  value!: string;
-  handleOk() {
-    this.ok.emit(this.value);
-    this.value = '';
-  }
-  handleCancel() {
-    this.hide.emit();
-  }
-  @Input() isVisible!: boolean;
+  public value!: string;
 }

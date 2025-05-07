@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { IncludedFilesModalComponent } from "./included-files-modal.component";
+import { FileFormModalComponent } from "./file-form-modal.component";
 
-describe("IncludedFilesModalComponent", () => {
-    let component: IncludedFilesModalComponent;
-    let fixture: ComponentFixture<IncludedFilesModalComponent>;
+describe("FileFormModalComponent", () => {
+    let component: FileFormModalComponent;
+    let fixture: ComponentFixture<FileFormModalComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [IncludedFilesModalComponent],
+            declarations: [FileFormModalComponent],
         }).compileComponents();
 
         fixture = TestBed.createComponent(
-            IncludedFilesModalComponent
+            FileFormModalComponent
         );
         component = fixture.componentInstance;
         fixture.detectChanges();
