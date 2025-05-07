@@ -57,7 +57,7 @@
         </ul>
       </nz-list-item>
       <nz-list-footer
-        ><a nz-button (click)="addExcludeDirectories()"
+        ><a nz-button (click)="addExcludedDirectory()"
           >Add Excluded Directories</a
         ></nz-list-footer
       >
@@ -115,11 +115,7 @@
     </button>
   </nz-form-item>
 </form>
-<app-excluded-directories-modal
-  [show]="showAddExcludedDirectoryModal"
-  (ok)="onOkAddExcludedDiretoryModal($event)"
-  (hide)="onHideAddExcludedDiretoryModal()"
-></app-excluded-directories-modal>
+
 <app-active-days-of-week-modal
   [show]="showAddActiveDaysOfWeekModal"
   (ok)="onOkAddActiveDaysOfWeekModal($event)"

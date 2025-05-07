@@ -9,14 +9,12 @@ import { CopyPathDto } from '../../../models';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { AddCopyPathAddIncludedFilesOnlyComponent } from '../add-copy-path-add-included-files-only/add-copy-path-add-included-files-only.component';
-import { AddCopyPathAddExcludedFilesModalComponent } from '../add-copy-path-add-excluded-files-modal/add-copy-path-add-excluded-files-modal.component';
-import { AddCopyPathAddExcludedDirectoriesModalComponent } from '../add-copy-path-add-excluded-directories-modal/add-copy-path-add-excluded-directories-modal.component';
 import { AddCopyPathAddActiveDaysOfWeekModalComponent } from '../add-copy-path-add-active-days-of-week-modal/add-copy-path-add-active-days-of-week-modal.component';
 import { CommonModule } from '@angular/common';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { FileFormModalComponent } from '../../../shared/components/file-form-modal/file-form-modal.component';
+import { DirectoryFormModalComponent } from '../../../shared/components/directory-form-modal/directory-form-modal.component';
 
 @Component({
   standalone: true,
@@ -26,8 +24,6 @@ import { FileFormModalComponent } from '../../../shared/components/file-form-mod
     NzFormModule,
     NzListModule,
     NzButtonModule,
-    AddCopyPathAddExcludedFilesModalComponent,
-    AddCopyPathAddExcludedDirectoriesModalComponent,
     AddCopyPathAddActiveDaysOfWeekModalComponent,
     NzInputModule,
   ],
@@ -46,21 +42,15 @@ export class AddCopyPathFormComponent implements OnInit {
   }
   onOkAddActiveDaysOfWeekModal(day: string) {
     this.copyPath.activeDaysOfWeek.push(day);
-    this.showAddExcludedDirectoryModal = false;
   }
   showAddActiveDaysOfWeekModal: boolean = false;
   onRemoveExcludedDirectories(index: number) {
     this.copyPath.excludeDirectories.splice(index, 1);
   }
-  onHideAddExcludedDiretoryModal() {
-    this.showAddExcludedDirectoryModal = false;
-  }
+  onHideAddExcludedDiretoryModal() {}
   onOkAddExcludedDiretoryModal(name: string) {
     this.copyPath.excludeDirectories.push(name);
-    this.showAddExcludedDirectoryModal = false;
   }
-
-  showAddExcludedDirectoryModal!: boolean;
 
   onOkAddExcludedFileModal(name: string) {
     this.copyPath.excludeFiles.push(name);
@@ -69,16 +59,37 @@ export class AddCopyPathFormComponent implements OnInit {
   onRemoveIncludedFiles(index: number) {
     this.copyPath.includeFilesOnly.splice(index, 1);
   }
+
   onRemoveExcludedFiles(index: number) {
     this.copyPath.excludeFiles.splice(index, 1);
   }
-  onHideAddIncludeFileModal() {
-    this.showAddIncludeFileModal = false;
-  }
-  showAddIncludeFileModal = false;
 
-  addExcludeDirectories() {
-    this.showAddExcludedDirectoryModal = true;
+  public addExcludedDirectory(): void {
+    const modal = this.modalService.create({
+      nzTitle: 'Add Excluded Directory',
+      nzContent: DirectoryFormModalComponent,
+      nzData: {
+        placeHolder: 'Excluded Directory Only',
+      },
+      nzFooter: [
+        {
+          label: 'Close',
+          onClick: () => modal.destroy(),
+        },
+        {
+          label: 'Confirm',
+          type: 'primary',
+          onClick: (component) => {
+            this.copyPath.excludeDirectories.push(component?.value);
+            modal.destroy();
+          },
+        },
+      ],
+      nzCentered: true,
+      nzWidth: '600px',
+      nzStyle: { top: '20px' },
+      nzBodyStyle: { padding: '2em' },
+    });
   }
 
   public addExcludeFiles(): void {
@@ -98,7 +109,6 @@ export class AddCopyPathFormComponent implements OnInit {
           type: 'primary',
           onClick: (component) => {
             this.copyPath.excludeFiles.push(component?.value);
-            this.showAddIncludeFileModal = false;
             modal.destroy();
           },
         },
@@ -127,7 +137,6 @@ export class AddCopyPathFormComponent implements OnInit {
           type: 'primary',
           onClick: (component) => {
             this.copyPath.includeFilesOnly.push(component?.value);
-            this.showAddIncludeFileModal = false;
             modal.destroy();
           },
         },
