@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
@@ -15,6 +15,8 @@ import { AddCopyPathAddExcludedDirectoriesModalComponent } from '../add-copy-pat
 import { AddCopyPathAddActiveDaysOfWeekModalComponent } from '../add-copy-path-add-active-days-of-week-modal/add-copy-path-add-active-days-of-week-modal.component';
 import { CommonModule } from '@angular/common';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { FileFormModalComponent } from '../../../shared/components/file-form-modal/file-form-modal.component';
 
 @Component({
   standalone: true,
@@ -24,7 +26,6 @@ import { NzInputModule } from 'ng-zorro-antd/input';
     NzFormModule,
     NzListModule,
     NzButtonModule,
-    AddCopyPathAddIncludedFilesOnlyComponent,
     AddCopyPathAddExcludedFilesModalComponent,
     AddCopyPathAddExcludedDirectoriesModalComponent,
     AddCopyPathAddActiveDaysOfWeekModalComponent,
@@ -35,6 +36,8 @@ import { NzInputModule } from 'ng-zorro-antd/input';
   styleUrls: ['./add-copy-path-form.component.scss'],
 })
 export class AddCopyPathFormComponent implements OnInit {
+  private modalService = inject(NzModalService);
+
   onRemoveActiveDaysOfWeek(index: number) {
     this.copyPath.activeDaysOfWeek.splice(index, 1);
   }
@@ -56,15 +59,11 @@ export class AddCopyPathFormComponent implements OnInit {
     this.copyPath.excludeDirectories.push(name);
     this.showAddExcludedDirectoryModal = false;
   }
-  showAddExcludedFileModal!: boolean;
+
   showAddExcludedDirectoryModal!: boolean;
 
-  onHideAddExcludedFileModal() {
-    this.showAddExcludedFileModal = false;
-  }
   onOkAddExcludedFileModal(name: string) {
     this.copyPath.excludeFiles.push(name);
-    this.showAddExcludedFileModal = false;
   }
 
   onRemoveIncludedFiles(index: number) {
@@ -73,23 +72,73 @@ export class AddCopyPathFormComponent implements OnInit {
   onRemoveExcludedFiles(index: number) {
     this.copyPath.excludeFiles.splice(index, 1);
   }
-  onOkAddIncludeFileModal(name: string) {
-    this.copyPath.includeFilesOnly.push(name);
-    this.showAddIncludeFileModal = false;
-  }
   onHideAddIncludeFileModal() {
     this.showAddIncludeFileModal = false;
   }
   showAddIncludeFileModal = false;
-  addExcludeFiles() {
-    this.showAddExcludedFileModal = true;
-  }
+
   addExcludeDirectories() {
     this.showAddExcludedDirectoryModal = true;
   }
-  addIncludeFile() {
-    this.showAddIncludeFileModal = true;
+
+  public addExcludeFiles(): void {
+    const modal = this.modalService.create({
+      nzTitle: 'Add Excluded Files Only',
+      nzContent: FileFormModalComponent,
+      nzData: {
+        placeHolder: 'Excluded Files Only',
+      },
+      nzFooter: [
+        {
+          label: 'Close',
+          onClick: () => modal.destroy(),
+        },
+        {
+          label: 'Confirm',
+          type: 'primary',
+          onClick: (component) => {
+            this.copyPath.excludeFiles.push(component?.value);
+            this.showAddIncludeFileModal = false;
+            modal.destroy();
+          },
+        },
+      ],
+      nzCentered: true,
+      nzWidth: '600px',
+      nzStyle: { top: '20px' },
+      nzBodyStyle: { padding: '2em' },
+    });
   }
+
+  public addIncludeFile(): void {
+    const modal = this.modalService.create({
+      nzTitle: 'Add Included Files Only',
+      nzContent: FileFormModalComponent,
+      nzData: {
+        placeHolder: 'Included Files Only',
+      },
+      nzFooter: [
+        {
+          label: 'Close',
+          onClick: () => modal.destroy(),
+        },
+        {
+          label: 'Confirm',
+          type: 'primary',
+          onClick: (component) => {
+            this.copyPath.includeFilesOnly.push(component?.value);
+            this.showAddIncludeFileModal = false;
+            modal.destroy();
+          },
+        },
+      ],
+      nzCentered: true,
+      nzWidth: '600px',
+      nzStyle: { top: '20px' },
+      nzBodyStyle: { padding: '2em' },
+    });
+  }
+
   @Output() submitForm = new EventEmitter();
   copyPath: CopyPathDto = {
     name: '',
@@ -104,6 +153,9 @@ export class AddCopyPathFormComponent implements OnInit {
     id: undefined,
   };
   onSubmitForm() {
+    if (this.validateForm.invalid) {
+      return;
+    }
     this.copyPath.name = this.validateForm.controls['name'].value;
     this.copyPath.source = this.validateForm.controls['source'].value;
     this.copyPath.destination = this.validateForm.controls['destination'].value;

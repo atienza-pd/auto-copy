@@ -26,7 +26,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { ExcludedFilesModalComponent } from '../excluded-files-modal/excluded-files-modal.component';
 import { ExcludedDirectoriesModalComponent } from '../excluded-directories-modal/excluded-directories-modal.component';
-import { IncludedFilesModalComponent } from '../included-files-modal/included-files-modal.component';
+import { FileFormModalComponent } from '../file-form-modal/file-form-modal.component';
 import { ActiveDaysOfWeekModalComponent } from '../active-days-of-week-modal/active-days-of-week-modal.component';
 
 @Component({
@@ -124,7 +124,7 @@ export class FormEditorComponent implements OnInit {
   public openIncludeFileModal() {
     this.modalService.create({
       nzTitle: 'Included File',
-      nzContent: IncludedFilesModalComponent,
+      nzContent: FileFormModalComponent,
       nzViewContainerRef: this.viewContainerRef,
       nzOnOk: ({ value }) => {
         this.copyPath.update((x) => {
