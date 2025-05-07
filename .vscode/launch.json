@@ -1,15 +1,20 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "PowerShell: Launch Current File",
-            "type": "PowerShell",
-            "request": "launch",
-            "script": "${file}",
-            "args": []
-        }
-    ]
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+
+  // If a prompt `Waiting for preLaunchTask 'start - app/ui`
+  //    shows up at the bottom left of the screen, click debug anyway button after the npm start process at the terminal finished.
+
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Ui - Launch Chrome against localhost",
+      "preLaunchTask": "npm: start - app/ui",
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}/app/ui"
+    }
+  ]
 }
