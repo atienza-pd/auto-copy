@@ -34,7 +34,7 @@
       <nz-list nzBordered>
         <nz-list-header>Included Files only</nz-list-header>
         <nz-list-item
-          *ngFor="let item of copyPath()?.includeFilesOnly; let i = index"
+          *ngFor="let item of copyPath()?.includeFilesOnly ?? []; let i = index"
         >
           {{ item }}
           <ul nz-list-item-actions>

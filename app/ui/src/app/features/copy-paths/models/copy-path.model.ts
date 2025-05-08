@@ -3,8 +3,8 @@ export interface CopyPathDto {
   destination: any;
   source: any;
   name: any;
-  includeFilesOnly: any[];
-  excludeDirectories: any[];
+  includeFilesOnly: string[];
+  excludeDirectories: string[];
   excludeFiles: any[];
   activeDaysOfWeek: string[];
   disable: boolean;
