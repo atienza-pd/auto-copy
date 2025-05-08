@@ -1,11 +1,4 @@
-import {
-  Component,
-  Input,
-  OnInit,
-  Output,
-  EventEmitter,
-  inject,
-} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NZ_MODAL_DATA, NzModalModule } from 'ng-zorro-antd/modal';
@@ -18,7 +11,7 @@ import { NZ_MODAL_DATA, NzModalModule } from 'ng-zorro-antd/modal';
   styleUrls: ['./file-form-modal.component.scss'],
 })
 export class FileFormModalComponent {
-  public data: { placeHolder: string } = inject(NZ_MODAL_DATA);
+  public data: { placeHolder: string } | null = inject(NZ_MODAL_DATA);
 
   public value!: string;
 }

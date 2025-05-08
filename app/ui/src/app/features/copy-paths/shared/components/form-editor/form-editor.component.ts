@@ -3,8 +3,6 @@ import {
   Component,
   EventEmitter,
   inject,
-  input,
-  Input,
   model,
   OnInit,
   Output,
@@ -50,7 +48,12 @@ export class FormEditorComponent implements OnInit {
   private viewContainerRef = inject(ViewContainerRef);
   private fb = inject(FormBuilder);
   public span: number = 12;
-  public copyPath = model<CopyPathDto>({} as CopyPathDto);
+
+  public copyPath = model<CopyPathDto>({
+    excludeDirectories: [] as string[],
+    includeFilesOnly: [] as string[],
+  } as CopyPathDto);
+
   @Output() submitForm = new EventEmitter();
 
   public validateForm!: FormGroup;
@@ -99,10 +102,10 @@ export class FormEditorComponent implements OnInit {
       nzContent: ExcludedFilesModalComponent,
       nzViewContainerRef: this.viewContainerRef,
       nzOnOk: ({ value }) => {
-        this.copyPath.update((x) => {
-          x.excludeFiles.push(value);
-          return x;
-        });
+        this.copyPath.update((x) => ({
+          ...x,
+          excludeFiles: [...x.excludeFiles, value],
+        }));
       },
     });
   }
@@ -113,10 +116,10 @@ export class FormEditorComponent implements OnInit {
       nzContent: ExcludedDirectoriesModalComponent,
       nzViewContainerRef: this.viewContainerRef,
       nzOnOk: ({ value }) => {
-        this.copyPath.update((x) => {
-          x.excludeDirectories.push(value);
-          return x;
-        });
+        this.copyPath.update((x) => ({
+          ...x,
+          excludeDirectories: [...x.excludeDirectories, value],
+        }));
       },
     });
   }
@@ -127,10 +130,10 @@ export class FormEditorComponent implements OnInit {
       nzContent: FileFormModalComponent,
       nzViewContainerRef: this.viewContainerRef,
       nzOnOk: ({ value }) => {
-        this.copyPath.update((x) => {
-          x.includeFilesOnly.push(value);
-          return x;
-        });
+        this.copyPath.update((x) => ({
+          ...x,
+          includeFilesOnly: [...x.includeFilesOnly, value],
+        }));
       },
     });
   }
