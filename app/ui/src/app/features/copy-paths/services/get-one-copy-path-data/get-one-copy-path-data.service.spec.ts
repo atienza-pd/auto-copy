@@ -1,15 +1,15 @@
 import { TestBed } from "@angular/core/testing";
 
-import { GetOneCopyPathHttpService } from "./get-one-copy-path-http.service";
+import { GetOneCopyPathDataService } from "./get-one-copy-path-data.service";
 import { provideHttpClientTesting } from "@angular/common/http/testing";
 import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 
-describe("GetOneCopyPathHttpService", () => {
-    let service: GetOneCopyPathHttpService;
+describe("GetOneCopyPathDataService", () => {
+    let service: GetOneCopyPathDataService;
 
     beforeEach(() => {
         TestBed.configureTestingModule({ imports: [], providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()] });
-        service = TestBed.inject(GetOneCopyPathHttpService);
+        service = TestBed.inject(GetOneCopyPathDataService);
     });
 
     it("should be created", () => {

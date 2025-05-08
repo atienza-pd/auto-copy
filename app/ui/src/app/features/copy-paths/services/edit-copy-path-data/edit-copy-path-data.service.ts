@@ -7,10 +7,13 @@ import { CopyPathDto } from '../../models';
 @Injectable({
   providedIn: 'root',
 })
-export class AddCopyPathHttpService {
+export class EditCopyPathDataService {
   constructor(private http: HttpClient) {}
 
-  execute(copyPath: CopyPathDto): Observable<any> {
-    return this.http.post<any>(`${environment.host}/copy-path/add`, copyPath);
+  execute(id: number, copyPath: CopyPathDto): Observable<any> {
+    return this.http.put<any>(
+      `${environment.host}/copy-path/edit/${id} `,
+      copyPath
+    );
   }
 }

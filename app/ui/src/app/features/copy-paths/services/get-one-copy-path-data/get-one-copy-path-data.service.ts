@@ -6,7 +6,7 @@ import { environment } from "src/environments/environment";
 @Injectable({
     providedIn: "root",
 })
-export class GetOneCopyPathHttpService {
+export class GetOneCopyPathDataService {
     constructor(private http: HttpClient) {}
 
     execute(id: number): Observable<any> {
