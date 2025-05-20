@@ -1,14 +1,6 @@
-import {
-  Component,
-  computed,
-  effect,
-  inject,
-  OnInit,
-  resource,
-} from '@angular/core';
+import { Component, computed, inject, resource } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EditCopyPathHttpService } from '../edit-copy-path-http/edit-copy-path-http.service';
-import { GetOneCopyPathHttpService } from '../get-one-copy-path-http/get-one-copy-path-http.service';
+import { EditCopyPathDataService } from '../../services/edit-copy-path-data/edit-copy-path-data.service';
 import { CopyPathDto } from '../../models';
 import { CommonModule } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -36,7 +28,7 @@ export class EditCopyPathContainerComponent {
       }).then((res) => res.json() as Promise<CopyPathDto>),
   });
 
-  constructor(private editCopyPathHttpService: EditCopyPathHttpService) {}
+  constructor(private editCopyPathHttpService: EditCopyPathDataService) {}
 
   onSubmitForm(copyPath: CopyPathDto) {
     this.editCopyPathHttpService

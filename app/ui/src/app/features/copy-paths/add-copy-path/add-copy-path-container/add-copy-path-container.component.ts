@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { AddCopyPathHttpService } from '../add-copy-path-http/add-copy-path-http.service';
+import { AddCopyPathDataService } from '../../services/add-copy-path-data/add-copy-path-data.service';
 import { Router } from '@angular/router';
 import { CopyPathDto } from '../../models';
-import { AddCopyPathFormComponent } from '../components/add-copy-path-form/add-copy-path-form.component';
+import { FormEditorComponent } from '../../shared/components/form-editor/form-editor.component';
 @Component({
   standalone: true,
   selector: 'app-add-copy-path-container',
   templateUrl: './add-copy-path-container.component.html',
   styleUrls: ['./add-copy-path-container.component.scss'],
-  imports: [AddCopyPathFormComponent],
+  imports: [FormEditorComponent],
 })
 export class AddCopyPathContainerComponent {
   onSubmitForm(data: CopyPathDto) {
@@ -18,7 +18,7 @@ export class AddCopyPathContainerComponent {
   }
 
   constructor(
-    private httpService: AddCopyPathHttpService,
+    private httpService: AddCopyPathDataService,
     private router: Router
   ) {}
 }

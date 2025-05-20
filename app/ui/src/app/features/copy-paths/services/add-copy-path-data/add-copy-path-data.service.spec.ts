@@ -1,15 +1,15 @@
 import { TestBed } from "@angular/core/testing";
 
-import { EditCopyPathHttpService } from "./edit-copy-path-http.service";
+import { AddCopyPathDataService } from "./add-copy-path-data.service";
 import { provideHttpClientTesting } from "@angular/common/http/testing";
 import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 
-describe("EditCopyPathHttpService", () => {
-    let service: EditCopyPathHttpService;
+describe("AddCopyPathDataService", () => {
+    let service: AddCopyPathDataService;
 
     beforeEach(() => {
         TestBed.configureTestingModule({ imports: [], providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()] });
-        service = TestBed.inject(EditCopyPathHttpService);
+        service = TestBed.inject(AddCopyPathDataService);
     });
 
     it("should be created", () => {
